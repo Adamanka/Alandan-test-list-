@@ -67,7 +67,8 @@
         <p class="section-sub" data-aos="fade-up" data-aos-delay="100">Легендарные команды Формулы 1</p>
     </div>
     <div class="teams-grid">
-        <div class="team-card-link" onclick="openTeam('ferrari')" data-aos="flip-left" data-aos-delay="0">
+        <!-- FERRARI -->
+        <div class="team-card-wrapper" data-team="ferrari">
             <div class="team-card" style="--team-color: #ff0000;">
                 <div class="team-card-glow"></div>
                 <div class="team-card-icon">🏎️</div>
@@ -81,7 +82,9 @@
                 <div class="team-card-hover"><span>Смотреть →</span></div>
             </div>
         </div>
-        <div class="team-card-link" onclick="openTeam('mercedes')" data-aos="flip-left" data-aos-delay="100">
+        
+        <!-- MERCEDES -->
+        <div class="team-card-wrapper" data-team="mercedes">
             <div class="team-card" style="--team-color: #c0c0c0;">
                 <div class="team-card-glow"></div>
                 <div class="team-card-icon">🏎️</div>
@@ -95,7 +98,9 @@
                 <div class="team-card-hover"><span>Смотреть →</span></div>
             </div>
         </div>
-        <div class="team-card-link" onclick="openTeam('redbull')" data-aos="flip-left" data-aos-delay="200">
+        
+        <!-- RED BULL -->
+        <div class="team-card-wrapper" data-team="redbull">
             <div class="team-card" style="--team-color: #1a1a2e;">
                 <div class="team-card-glow"></div>
                 <div class="team-card-icon">🏎️</div>
@@ -109,7 +114,9 @@
                 <div class="team-card-hover"><span>Смотреть →</span></div>
             </div>
         </div>
-        <div class="team-card-link" onclick="openTeam('mclaren')" data-aos="flip-left" data-aos-delay="300">
+        
+        <!-- MCLAREN -->
+        <div class="team-card-wrapper" data-team="mclaren">
             <div class="team-card" style="--team-color: #ff6b00;">
                 <div class="team-card-glow"></div>
                 <div class="team-card-icon">🏎️</div>
@@ -123,7 +130,9 @@
                 <div class="team-card-hover"><span>Смотреть →</span></div>
             </div>
         </div>
-        <div class="team-card-link" onclick="openTeam('aston')" data-aos="flip-left" data-aos-delay="400">
+        
+        <!-- ASTON MARTIN -->
+        <div class="team-card-wrapper" data-team="aston">
             <div class="team-card" style="--team-color: #006400;">
                 <div class="team-card-glow"></div>
                 <div class="team-card-icon">🏎️</div>
@@ -140,9 +149,12 @@
     </div>
 </section>
 
-<!-- СТРАНИЦЫ КОМАНД (оставляем как было, но с улучшенными анимациями) -->
+<!-- ========================================================= -->
+<!-- СТРАНИЦЫ КОМАНД -->
+<!-- ========================================================= -->
+
 <!-- FERRARI -->
-<div class="team-page-overlay" id="team-ferrari-overlay" onclick="closeTeam('ferrari')"></div>
+<div class="team-page-overlay" id="team-ferrari-overlay"></div>
 <div class="team-page" id="team-ferrari">
     <div class="team-page-inner">
         <button class="back-btn" onclick="closeTeam('ferrari')"><i class="fas fa-arrow-left"></i> Назад</button>
@@ -202,7 +214,7 @@
 </div>
 
 <!-- MERCEDES -->
-<div class="team-page-overlay" id="team-mercedes-overlay" onclick="closeTeam('mercedes')"></div>
+<div class="team-page-overlay" id="team-mercedes-overlay"></div>
 <div class="team-page" id="team-mercedes">
     <div class="team-page-inner">
         <button class="back-btn" onclick="closeTeam('mercedes')"><i class="fas fa-arrow-left"></i> Назад</button>
@@ -249,7 +261,7 @@
 </div>
 
 <!-- RED BULL -->
-<div class="team-page-overlay" id="team-redbull-overlay" onclick="closeTeam('redbull')"></div>
+<div class="team-page-overlay" id="team-redbull-overlay"></div>
 <div class="team-page" id="team-redbull">
     <div class="team-page-inner">
         <button class="back-btn" onclick="closeTeam('redbull')"><i class="fas fa-arrow-left"></i> Назад</button>
@@ -297,7 +309,7 @@
 </div>
 
 <!-- MCLAREN -->
-<div class="team-page-overlay" id="team-mclaren-overlay" onclick="closeTeam('mclaren')"></div>
+<div class="team-page-overlay" id="team-mclaren-overlay"></div>
 <div class="team-page" id="team-mclaren">
     <div class="team-page-inner">
         <button class="back-btn" onclick="closeTeam('mclaren')"><i class="fas fa-arrow-left"></i> Назад</button>
@@ -344,7 +356,7 @@
 </div>
 
 <!-- ASTON MARTIN -->
-<div class="team-page-overlay" id="team-aston-overlay" onclick="closeTeam('aston')"></div>
+<div class="team-page-overlay" id="team-aston-overlay"></div>
 <div class="team-page" id="team-aston">
     <div class="team-page-inner">
         <button class="back-btn" onclick="closeTeam('aston')"><i class="fas fa-arrow-left"></i> Назад</button>
