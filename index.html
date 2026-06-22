@@ -3,374 +3,766 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formula 1 | Legends</title>
+    <title>Formula 1 | Official</title>
     
+    <!-- ========== БИБЛИОТЕКИ ========== -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- 3D ФОН -->
-    <div id="three-canvas"></div>
 
-    <!-- НАВИГАЦИЯ -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">🏎️ F1</div>
-            <ul class="nav-menu">
-                <li><a href="#home">Главная</a></li>
-                <li><a href="#teams">Команды</a></li>
-                <li><a href="#records">Рекорды</a></li>
-                <li><a href="#contact">Контакты</a></li>
-            </ul>
+<!-- ========================================================= -->
+<!-- 3D ФОН -->
+<!-- ========================================================= -->
+<div id="three-canvas"></div>
+
+<!-- ========================================================= -->
+<!-- НАВИГАЦИЯ -->
+<!-- ========================================================= -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <span class="logo-icon">🏎️</span>
+            F1<span>.</span>
         </div>
-    </nav>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#home" class="active">Главная</a></li>
+            <li><a href="#teams">Команды</a></li>
+            <li><a href="#drivers-page">Пилоты</a></li>
+            <li><a href="#records">Рекорды</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+        <div class="nav-toggle" id="navToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
 
-    <!-- ГЛАВНЫЙ ЭКРАН -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-badge">🏆 2024 СЕЗОН</div>
-            <h1 class="glitch-text">ФОРМУЛА 1</h1>
-            <p class="subtitle">Скорость • Страсть • Технологии</p>
-            <p class="description">Королевские гонки — вершина автоспорта.</p>
-            <div class="cta-buttons">
-                <a href="#teams" class="btn-primary">
-                    <i class="fas fa-flag-checkered"></i> Смотреть команды
-                </a>
+<!-- ========================================================= -->
+<!-- ГЛАВНЫЙ ЭКРАН -->
+<!-- ========================================================= -->
+<section class="hero" id="home">
+    <div class="hero-bg-gradient"></div>
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
+        <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Сезон 2024
+        </div>
+        <h1 class="glitch-text">
+            Formula <span>1</span>
+        </h1>
+        <p class="subtitle">Скорость. Страсть. Технологии.</p>
+        <p class="description">
+            Королевские гонки — вершина автоспорта. 24 гонки, 10 команд, 20 пилотов.
+            Битва на каждой миллисекунде. История длиною в 74 сезона.
+        </p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <span class="stat-num">74</span>
+                <span class="stat-label">Сезонов</span>
+            </div>
+            <div class="hero-stat">
+                <span class="stat-num">1100+</span>
+                <span class="stat-label">Гонок</span>
+            </div>
+            <div class="hero-stat">
+                <span class="stat-num">34</span>
+                <span class="stat-label">Чемпиона</span>
             </div>
         </div>
-    </section>
+        <div class="hero-buttons">
+            <a href="#teams" class="btn-primary">
+                <i class="fas fa-flag-checkered"></i>
+                Исследовать
+            </a>
+            <a href="#records" class="btn-outline">
+                <i class="fas fa-trophy"></i>
+                Рекорды
+            </a>
+        </div>
+    </div>
+    <div class="hero-scroll">
+        <span>Прокрутите вниз</span>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</section>
 
-    <!-- ===================================================== -->
-    <!-- === КАЖДЫЙ БЛОК: БОЛИД → ПРИ СКРОЛЛЕ ПИЛОТ (ВЕСЬ ЭКРАН) === -->
-    <!-- ===================================================== -->
+<!-- ========================================================= -->
+<!-- КОМАНДЫ -->
+<!-- ========================================================= -->
+<section class="teams-grid-section" id="teams">
+    <div class="section-header" data-aos="fade-up">
+        <h2>Команды</h2>
+        <p class="section-sub">10 команд. 20 пилотов. Одна цель — победа.</p>
+    </div>
+    
+    <div class="teams-grid">
+        <!-- Ferrari -->
+        <a href="#team-ferrari" class="team-card-link" data-aos="flip-up" data-aos-delay="0">
+            <div class="team-card" style="border-color: #ff0000;">
+                <div class="team-card-icon" style="background: #ff0000;">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3>Ferrari</h3>
+                <p>16 титулов • 240+ побед</p>
+                <span class="team-card-arrow">→</span>
+                <div class="team-card-hover">
+                    <span>Смотреть →</span>
+                </div>
+            </div>
+        </a>
+        
+        <!-- Mercedes -->
+        <a href="#team-mercedes" class="team-card-link" data-aos="flip-up" data-aos-delay="100">
+            <div class="team-card" style="border-color: #c0c0c0;">
+                <div class="team-card-icon" style="background: #c0c0c0; color: #000;">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3>Mercedes</h3>
+                <p>8 титулов • 120+ побед</p>
+                <span class="team-card-arrow">→</span>
+                <div class="team-card-hover">
+                    <span>Смотреть →</span>
+                </div>
+            </div>
+        </a>
+        
+        <!-- Red Bull -->
+        <a href="#team-redbull" class="team-card-link" data-aos="flip-up" data-aos-delay="200">
+            <div class="team-card" style="border-color: #1a1a2e;">
+                <div class="team-card-icon" style="background: #1a1a2e;">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3>Red Bull</h3>
+                <p>6 титулов • 100+ побед</p>
+                <span class="team-card-arrow">→</span>
+                <div class="team-card-hover">
+                    <span>Смотреть →</span>
+                </div>
+            </div>
+        </a>
+        
+        <!-- McLaren -->
+        <a href="#team-mclaren" class="team-card-link" data-aos="flip-up" data-aos-delay="300">
+            <div class="team-card" style="border-color: #ff6b00;">
+                <div class="team-card-icon" style="background: #ff6b00;">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3>McLaren</h3>
+                <p>8 титулов • 180+ побед</p>
+                <span class="team-card-arrow">→</span>
+                <div class="team-card-hover">
+                    <span>Смотреть →</span>
+                </div>
+            </div>
+        </a>
+        
+        <!-- Aston Martin -->
+        <a href="#team-aston" class="team-card-link" data-aos="flip-up" data-aos-delay="400">
+            <div class="team-card" style="border-color: #006400;">
+                <div class="team-card-icon" style="background: #006400;">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3>Aston Martin</h3>
+                <p>0 титулов • 0 побед</p>
+                <span class="team-card-arrow">→</span>
+                <div class="team-card-hover">
+                    <span>Смотреть →</span>
+                </div>
+            </div>
+        </a>
+        
+        <!-- Alpine -->
+        <a href="#team-alpine" class="team-card-link" data-aos="flip-up" data-aos-delay="500">
+            <div class="team-card" style="border-color: #0090ff;">
+                <div class="team-card-icon" style="background: #0090ff;">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3>Alpine</h3>
+                <p>0 титулов • 20+ побед</p>
+                <span class="team-card-arrow">→</span>
+                <div class="team-card-hover">
+                    <span>Смотреть →</span>
+                </div>
+            </div>
+        </a>
+        
+        <!-- Williams -->
+        <a href="#team-williams" class="team-card-link" data-aos="flip-up" data-aos-delay="600">
+            <div class="team-card" style="border-color: #005aff;">
+                <div class="team-card-icon" style="background: #005aff;">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3>Williams</h3>
+                <p>9 титулов • 110+ побед</p>
+                <span class="team-card-arrow">→</span>
+                <div class="team-card-hover">
+                    <span>Смотреть →</span>
+                </div>
+            </div>
+        </a>
+        
+        <!-- AlphaTauri -->
+        <a href="#team-alphatauri" class="team-card-link" data-aos="flip-up" data-aos-delay="700">
+            <div class="team-card" style="border-color: #2b2b2b;">
+                <div class="team-card-icon" style="background: #2b2b2b;">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3>AlphaTauri</h3>
+                <p>0 титулов • 2 победы</p>
+                <span class="team-card-arrow">→</span>
+                <div class="team-card-hover">
+                    <span>Смотреть →</span>
+                </div>
+            </div>
+        </a>
+        
+        <!-- Haas -->
+        <a href="#team-haas" class="team-card-link" data-aos="flip-up" data-aos-delay="800">
+            <div class="team-card" style="border-color: #787878;">
+                <div class="team-card-icon" style="background: #787878;">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3>Haas</h3>
+                <p>0 титулов • 0 побед</p>
+                <span class="team-card-arrow">→</span>
+                <div class="team-card-hover">
+                    <span>Смотреть →</span>
+                </div>
+            </div>
+        </a>
+        
+        <!-- Sauber -->
+        <a href="#team-sauber" class="team-card-link" data-aos="flip-up" data-aos-delay="900">
+            <div class="team-card" style="border-color: #00b8b8;">
+                <div class="team-card-icon" style="background: #00b8b8;">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3>Sauber</h3>
+                <p>0 титулов • 0 побед</p>
+                <span class="team-card-arrow">→</span>
+                <div class="team-card-hover">
+                    <span>Смотреть →</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
 
-    <!-- ===================================================== -->
-    <!-- FERRARI -->
-    <!-- ===================================================== -->
-    <section class="team-section" id="teams">
-        <!-- БОЛИД НА ВЕСЬ ЭКРАН -->
-        <div class="team-car-fullscreen" data-aos="zoom-in" data-aos-duration="1500">
-            <div class="car-container">
-                <img src="ferrari.jpg" alt="Ferrari F1" class="car-image">
-                <div class="car-label">
-                    <h2 style="color: #ff0000;">Ferrari</h2>
-                    <p>🏆 16 титулов • ⚡ 240+ побед</p>
-                    <p class="country">🇮🇹 Италия</p>
+<!-- ========================================================= -->
+<!-- СТРАНИЦЫ КОМАНД -->
+<!-- ========================================================= -->
+
+<!-- === FERRARI === -->
+<section class="team-page" id="team-ferrari">
+    <div class="team-page-inner">
+        <a href="#teams" class="back-btn"><i class="fas fa-arrow-left"></i> Назад</a>
+        
+        <div class="team-page-content">
+            <div class="team-page-left" data-aos="zoom-in" data-aos-duration="1500">
+                <div class="car-container">
+                    <img src="ferrari.jpg" alt="Ferrari" class="team-page-car">
+                    <div class="car-glow" style="background: radial-gradient(circle, rgba(255,0,0,0.2), transparent 70%);"></div>
+                </div>
+            </div>
+            <div class="team-page-right" data-aos="fade-left" data-aos-duration="1200">
+                <div class="team-page-badge" style="background: #ff0000;">Scuderia Ferrari</div>
+                <h1>Ferrari</h1>
+                <p class="team-page-stats">
+                    <span>🏆 16 титулов</span>
+                    <span>⚡ 240+ побед</span>
+                    <span>🇮🇹 Италия</span>
+                </p>
+                <p class="team-page-desc">
+                    Легендарная команда Формулы 1. Основана в 1929 году Энцо Феррари. 
+                    Самая титулованная команда в истории. Красные болиды — символ страсти и скорости.
+                </p>
+                
+                <div class="team-page-drivers">
+                    <h3>Легендарные пилоты</h3>
+                    <div class="team-page-driver">
+                        <img src="schumacher.jpg" alt="Schumacher">
+                        <div class="driver-info">
+                            <h4>Михаэль Шумахер</h4>
+                            <p>7-кратный чемпион мира</p>
+                            <span class="driver-stats">91 победа • 68 поул-позиций</span>
+                            <span class="driver-period">🇩🇪 1991-2006</span>
+                        </div>
+                    </div>
+                    <div class="team-page-driver">
+                        <img src="vettel.jpg" alt="Vettel">
+                        <div class="driver-info">
+                            <h4>Себастьян Феттель</h4>
+                            <p>4-кратный чемпион мира</p>
+                            <span class="driver-stats">53 победы • 57 поул-позиций</span>
+                            <span class="driver-period">🇩🇪 2015-2020</span>
+                        </div>
+                    </div>
+                    <div class="team-page-driver">
+                        <div class="driver-placeholder-small">🏎️</div>
+                        <div class="driver-info">
+                            <h4>Шарль Леклер</h4>
+                            <p>Восходящая звезда Ferrari</p>
+                            <span class="driver-stats">5 побед • 23 поул-позиции</span>
+                            <span class="driver-period">🇲🇨 2019-2024</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-page-actions">
+                    <a href="#teams" class="btn-secondary">← Все команды</a>
+                    <a href="#records" class="btn-link">Рекорды →</a>
                 </div>
             </div>
         </div>
+    </div>
+</section>
 
-        <!-- ПИЛОТЫ НА ВЕСЬ ЭКРАН -->
-        <div class="team-drivers-fullscreen" data-aos="fade-up" data-aos-duration="1200">
-            <div class="drivers-container">
-                <h2 style="color: #ff0000;">Пилоты Ferrari</h2>
-                <div class="drivers-grid-full">
-                    <div class="driver-card-full" data-aos="flip-left" data-aos-duration="1000">
-                        <img src="schumacher.jpg" alt="Schumacher" class="driver-photo-full">
-                        <div class="driver-info-full">
-                            <h3>Михаэль Шумахер</h3>
-                            <p class="title">7-кратный чемпион</p>
-                            <span class="stat" style="background: #ff0000;">91 победа</span>
-                            <div class="meta">
-                                <span>🇩🇪 Германия</span>
-                                <span>1991-2006</span>
-                            </div>
+<!-- === MERCEDES === -->
+<section class="team-page" id="team-mercedes">
+    <div class="team-page-inner">
+        <a href="#teams" class="back-btn"><i class="fas fa-arrow-left"></i> Назад</a>
+        
+        <div class="team-page-content">
+            <div class="team-page-left" data-aos="zoom-in" data-aos-duration="1500">
+                <div class="car-container">
+                    <img src="Mercedes F1 car.jpg" alt="Mercedes" class="team-page-car">
+                    <div class="car-glow" style="background: radial-gradient(circle, rgba(192,192,192,0.15), transparent 70%);"></div>
+                </div>
+            </div>
+            <div class="team-page-right" data-aos="fade-left" data-aos-duration="1200">
+                <div class="team-page-badge" style="background: #c0c0c0; color: #000;">Mercedes-AMG</div>
+                <h1>Mercedes</h1>
+                <p class="team-page-stats">
+                    <span>🏆 8 титулов</span>
+                    <span>⚡ 120+ побед</span>
+                    <span>🇩🇪 Германия</span>
+                </p>
+                <p class="team-page-desc">
+                    Доминировали в эру гибридных двигателей. 8 титулов подряд — 
+                    рекорд Формулы 1. Серебряные стрелы — символ немецкого совершенства.
+                </p>
+                
+                <div class="team-page-drivers">
+                    <h3>Легендарные пилоты</h3>
+                    <div class="team-page-driver">
+                        <img src="hamilton.jpg" alt="Hamilton">
+                        <div class="driver-info">
+                            <h4>Льюис Хэмилтон</h4>
+                            <p>7-кратный чемпион мира</p>
+                            <span class="driver-stats">103 победы • 104 поул-позиции</span>
+                            <span class="driver-period">🇬🇧 2013-2024</span>
                         </div>
                     </div>
-                    <div class="driver-card-full" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200">
-                        <img src="vettel.jpg" alt="Vettel" class="driver-photo-full">
-                        <div class="driver-info-full">
-                            <h3>Себастьян Феттель</h3>
-                            <p class="title">4-кратный чемпион</p>
-                            <span class="stat" style="background: #ff0000;">53 победы</span>
-                            <div class="meta">
-                                <span>🇩🇪 Германия</span>
-                                <span>2015-2020</span>
-                            </div>
+                    <div class="team-page-driver">
+                        <div class="driver-placeholder-small">🏎️</div>
+                        <div class="driver-info">
+                            <h4>Джордж Расселл</h4>
+                            <p>Восходящая звезда</p>
+                            <span class="driver-stats">2 победы • 1 поул-позиция</span>
+                            <span class="driver-period">🇬🇧 2022-2024</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================================================== -->
-    <!-- MERCEDES -->
-    <!-- ===================================================== -->
-    <section class="team-section">
-        <!-- БОЛИД -->
-        <div class="team-car-fullscreen" data-aos="zoom-in" data-aos-duration="1500">
-            <div class="car-container">
-                <img src="Mercedes F1 car.jpg" alt="Mercedes F1" class="car-image">
-                <div class="car-label">
-                    <h2 style="color: #c0c0c0;">Mercedes-AMG</h2>
-                    <p>🏆 8 титулов • ⚡ 120+ побед</p>
-                    <p class="country">🇩🇪 Германия</p>
+                
+                <div class="team-page-actions">
+                    <a href="#teams" class="btn-secondary">← Все команды</a>
+                    <a href="#records" class="btn-link">Рекорды →</a>
                 </div>
             </div>
         </div>
+    </div>
+</section>
 
-        <!-- ПИЛОТЫ -->
-        <div class="team-drivers-fullscreen" data-aos="fade-up" data-aos-duration="1200">
-            <div class="drivers-container">
-                <h2 style="color: #c0c0c0;">Пилоты Mercedes</h2>
-                <div class="drivers-grid-full">
-                    <div class="driver-card-full" data-aos="flip-left" data-aos-duration="1000">
-                        <img src="hamilton.jpg" alt="Hamilton" class="driver-photo-full">
-                        <div class="driver-info-full">
-                            <h3>Льюис Хэмилтон</h3>
-                            <p class="title">7-кратный чемпион</p>
-                            <span class="stat" style="background: #c0c0c0; color: #000;">103 победы</span>
-                            <div class="meta">
-                                <span>🇬🇧 Великобритания</span>
-                                <span>2013-2024</span>
-                            </div>
+<!-- === RED BULL === -->
+<section class="team-page" id="team-redbull">
+    <div class="team-page-inner">
+        <a href="#teams" class="back-btn"><i class="fas fa-arrow-left"></i> Назад</a>
+        
+        <div class="team-page-content">
+            <div class="team-page-left" data-aos="zoom-in" data-aos-duration="1500">
+                <div class="car-container">
+                    <img src="redbull.jpg.jpg" alt="Red Bull" class="team-page-car">
+                    <div class="car-glow" style="background: radial-gradient(circle, rgba(26,26,46,0.2), transparent 70%);"></div>
+                </div>
+            </div>
+            <div class="team-page-right" data-aos="fade-left" data-aos-duration="1200">
+                <div class="team-page-badge" style="background: #1a1a2e;">Red Bull Racing</div>
+                <h1>Red Bull</h1>
+                <p class="team-page-stats">
+                    <span>🏆 6 титулов</span>
+                    <span>⚡ 100+ побед</span>
+                    <span>🇦🇹 Австрия</span>
+                </p>
+                <p class="team-page-desc">
+                    Современная сила Формулы 1. Действующие чемпионы. 
+                    Команда, которая бросила вызов доминированию Mercedes.
+                </p>
+                
+                <div class="team-page-drivers">
+                    <h3>Легендарные пилоты</h3>
+                    <div class="team-page-driver">
+                        <img src="verstappen.jpg" alt="Verstappen">
+                        <div class="driver-info">
+                            <h4>Макс Ферстаппен</h4>
+                            <p>Действующий чемпион</p>
+                            <span class="driver-stats">54 победы • 38 поул-позиций</span>
+                            <span class="driver-period">🇳🇱 2016-2024</span>
                         </div>
                     </div>
-                    <div class="driver-card-full" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200">
-                        <div class="driver-photo-full placeholder">🚗</div>
-                        <div class="driver-info-full">
-                            <h3>Джордж Расселл</h3>
-                            <p class="title">Восходящая звезда</p>
-                            <span class="stat" style="background: #c0c0c0; color: #000;">2 победы</span>
-                            <div class="meta">
-                                <span>🇬🇧 Великобритания</span>
-                                <span>2022-2024</span>
-                            </div>
+                    <div class="team-page-driver">
+                        <div class="driver-placeholder-small">🏎️</div>
+                        <div class="driver-info">
+                            <h4>Серхио Перес</h4>
+                            <p>Опытный пилот</p>
+                            <span class="driver-stats">6 побед • 1 поул-позиция</span>
+                            <span class="driver-period">🇲🇽 2021-2024</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================================================== -->
-    <!-- RED BULL -->
-    <!-- ===================================================== -->
-    <section class="team-section">
-        <!-- БОЛИД -->
-        <div class="team-car-fullscreen" data-aos="zoom-in" data-aos-duration="1500">
-            <div class="car-container">
-                <img src="redbull.jpg.jpg" alt="Red Bull F1" class="car-image">
-                <div class="car-label">
-                    <h2 style="color: #1a1a2e;">Red Bull Racing</h2>
-                    <p>🏆 6 титулов • ⚡ 100+ побед</p>
-                    <p class="country">🇦🇹 Австрия</p>
+                
+                <div class="team-page-actions">
+                    <a href="#teams" class="btn-secondary">← Все команды</a>
+                    <a href="#records" class="btn-link">Рекорды →</a>
                 </div>
             </div>
         </div>
+    </div>
+</section>
 
-        <!-- ПИЛОТЫ -->
-        <div class="team-drivers-fullscreen" data-aos="fade-up" data-aos-duration="1200">
-            <div class="drivers-container">
-                <h2 style="color: #1a1a2e;">Пилоты Red Bull</h2>
-                <div class="drivers-grid-full">
-                    <div class="driver-card-full" data-aos="flip-left" data-aos-duration="1000">
-                        <img src="verstappen.jpg" alt="Verstappen" class="driver-photo-full">
-                        <div class="driver-info-full">
-                            <h3>Макс Ферстаппен</h3>
-                            <p class="title">Действующий чемпион</p>
-                            <span class="stat" style="background: #1a1a2e;">54 победы</span>
-                            <div class="meta">
-                                <span>🇳🇱 Нидерланды</span>
-                                <span>2016-2024</span>
-                            </div>
+<!-- === MCLAREN === -->
+<section class="team-page" id="team-mclaren">
+    <div class="team-page-inner">
+        <a href="#teams" class="back-btn"><i class="fas fa-arrow-left"></i> Назад</a>
+        
+        <div class="team-page-content">
+            <div class="team-page-left" data-aos="zoom-in" data-aos-duration="1500">
+                <div class="car-container">
+                    <img src="mclaren.jpg" alt="McLaren" class="team-page-car">
+                    <div class="car-glow" style="background: radial-gradient(circle, rgba(255,107,0,0.15), transparent 70%);"></div>
+                </div>
+            </div>
+            <div class="team-page-right" data-aos="fade-left" data-aos-duration="1200">
+                <div class="team-page-badge" style="background: #ff6b00;">McLaren F1</div>
+                <h1>McLaren</h1>
+                <p class="team-page-stats">
+                    <span>🏆 8 титулов</span>
+                    <span>⚡ 180+ побед</span>
+                    <span>🇬🇧 Великобритания</span>
+                </p>
+                <p class="team-page-desc">
+                    Легенда британского автоспорта. Возвращение к успеху.
+                    Команда, воспитавшая величайших пилотов.
+                </p>
+                
+                <div class="team-page-drivers">
+                    <h3>Легендарные пилоты</h3>
+                    <div class="team-page-driver">
+                        <img src="senna.jpg" alt="Senna">
+                        <div class="driver-info">
+                            <h4>Айртон Сенна</h4>
+                            <p>3-кратный чемпион мира</p>
+                            <span class="driver-stats">41 победа • 65 поул-позиций</span>
+                            <span class="driver-period">🇧🇷 1988-1993</span>
                         </div>
                     </div>
-                    <div class="driver-card-full" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200">
-                        <div class="driver-photo-full placeholder">🚗</div>
-                        <div class="driver-info-full">
-                            <h3>Серхио Перес</h3>
-                            <p class="title">Опытный пилот</p>
-                            <span class="stat" style="background: #1a1a2e;">6 побед</span>
-                            <div class="meta">
-                                <span>🇲🇽 Мексика</span>
-                                <span>2021-2024</span>
-                            </div>
+                    <div class="team-page-driver">
+                        <div class="driver-placeholder-small">🏎️</div>
+                        <div class="driver-info">
+                            <h4>Ландо Норрис</h4>
+                            <p>Талантливый пилот</p>
+                            <span class="driver-stats">2 победы • 2 поул-позиции</span>
+                            <span class="driver-period">🇬🇧 2019-2024</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================================================== -->
-    <!-- MCLAREN -->
-    <!-- ===================================================== -->
-    <section class="team-section">
-        <!-- БОЛИД -->
-        <div class="team-car-fullscreen" data-aos="zoom-in" data-aos-duration="1500">
-            <div class="car-container">
-                <img src="mclaren.jpg" alt="McLaren F1" class="car-image">
-                <div class="car-label">
-                    <h2 style="color: #ff6b00;">McLaren</h2>
-                    <p>🏆 8 титулов • ⚡ 180+ побед</p>
-                    <p class="country">🇬🇧 Великобритания</p>
+                
+                <div class="team-page-actions">
+                    <a href="#teams" class="btn-secondary">← Все команды</a>
+                    <a href="#records" class="btn-link">Рекорды →</a>
                 </div>
             </div>
         </div>
+    </div>
+</section>
 
-        <!-- ПИЛОТЫ -->
-        <div class="team-drivers-fullscreen" data-aos="fade-up" data-aos-duration="1200">
-            <div class="drivers-container">
-                <h2 style="color: #ff6b00;">Пилоты McLaren</h2>
-                <div class="drivers-grid-full">
-                    <div class="driver-card-full" data-aos="flip-left" data-aos-duration="1000">
-                        <img src="senna.jpg" alt="Senna" class="driver-photo-full">
-                        <div class="driver-info-full">
-                            <h3>Айртон Сенна</h3>
-                            <p class="title">3-кратный чемпион</p>
-                            <span class="stat" style="background: #ff6b00;">41 победа</span>
-                            <div class="meta">
-                                <span>🇧🇷 Бразилия</span>
-                                <span>1988-1993</span>
-                            </div>
+<!-- === ASTON MARTIN === -->
+<section class="team-page" id="team-aston">
+    <div class="team-page-inner">
+        <a href="#teams" class="back-btn"><i class="fas fa-arrow-left"></i> Назад</a>
+        
+        <div class="team-page-content">
+            <div class="team-page-left" data-aos="zoom-in" data-aos-duration="1500">
+                <div class="car-container">
+                    <img src="aston.jpg" alt="Aston Martin" class="team-page-car">
+                    <div class="car-glow" style="background: radial-gradient(circle, rgba(0,100,0,0.15), transparent 70%);"></div>
+                </div>
+            </div>
+            <div class="team-page-right" data-aos="fade-left" data-aos-duration="1200">
+                <div class="team-page-badge" style="background: #006400;">Aston Martin</div>
+                <h1>Aston Martin</h1>
+                <p class="team-page-stats">
+                    <span>🏆 0 титулов</span>
+                    <span>⚡ 0 побед</span>
+                    <span>🇬🇧 Великобритания</span>
+                </p>
+                <p class="team-page-desc">
+                    Новая сила в Формуле 1. Амбициозный проект с богатой историей.
+                    Возвращение легендарного британского бренда.
+                </p>
+                
+                <div class="team-page-drivers">
+                    <h3>Легендарные пилоты</h3>
+                    <div class="team-page-driver">
+                        <img src="alonso.jpg" alt="Alonso">
+                        <div class="driver-info">
+                            <h4>Фернандо Алонсо</h4>
+                            <p>2-кратный чемпион мира</p>
+                            <span class="driver-stats">32 победы • 22 поул-позиции</span>
+                            <span class="driver-period">🇪🇸 2023-2024</span>
                         </div>
                     </div>
-                    <div class="driver-card-full" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200">
-                        <div class="driver-photo-full placeholder">🚗</div>
-                        <div class="driver-info-full">
-                            <h3>Ландо Норрис</h3>
-                            <p class="title">Талантливый пилот</p>
-                            <span class="stat" style="background: #ff6b00;">2 победы</span>
-                            <div class="meta">
-                                <span>🇬🇧 Великобритания</span>
-                                <span>2019-2024</span>
-                            </div>
+                    <div class="team-page-driver">
+                        <div class="driver-placeholder-small">🏎️</div>
+                        <div class="driver-info">
+                            <h4>Лэнс Стролл</h4>
+                            <p>Молодой пилот</p>
+                            <span class="driver-stats">0 побед • 1 поул-позиция</span>
+                            <span class="driver-period">🇨🇦 2021-2024</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================================================== -->
-    <!-- ASTON MARTIN -->
-    <!-- ===================================================== -->
-    <section class="team-section">
-        <!-- БОЛИД -->
-        <div class="team-car-fullscreen" data-aos="zoom-in" data-aos-duration="1500">
-            <div class="car-container">
-                <img src="aston.jpg" alt="Aston Martin F1" class="car-image">
-                <div class="car-label">
-                    <h2 style="color: #006400;">Aston Martin</h2>
-                    <p>🏆 0 титулов • ⚡ 0 побед</p>
-                    <p class="country">🇬🇧 Великобритания</p>
+                
+                <div class="team-page-actions">
+                    <a href="#teams" class="btn-secondary">← Все команды</a>
+                    <a href="#records" class="btn-link">Рекорды →</a>
                 </div>
             </div>
         </div>
+    </div>
+</section>
 
-        <!-- ПИЛОТЫ -->
-        <div class="team-drivers-fullscreen" data-aos="fade-up" data-aos-duration="1200">
-            <div class="drivers-container">
-                <h2 style="color: #006400;">Пилоты Aston Martin</h2>
-                <div class="drivers-grid-full">
-                    <div class="driver-card-full" data-aos="flip-left" data-aos-duration="1000">
-                        <img src="alonso.jpg" alt="Alonso" class="driver-photo-full">
-                        <div class="driver-info-full">
-                            <h3>Фернандо Алонсо</h3>
-                            <p class="title">2-кратный чемпион</p>
-                            <span class="stat" style="background: #006400;">32 победы</span>
-                            <div class="meta">
-                                <span>🇪🇸 Испания</span>
-                                <span>2023-2024</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="driver-card-full" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200">
-                        <div class="driver-photo-full placeholder">🚗</div>
-                        <div class="driver-info-full">
-                            <h3>Лэнс Стролл</h3>
-                            <p class="title">Молодой пилот</p>
-                            <span class="stat" style="background: #006400;">0 побед</span>
-                            <div class="meta">
-                                <span>🇨🇦 Канада</span>
-                                <span>2021-2024</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!-- ========================================================= -->
+<!-- СТРАНИЦА ПИЛОТОВ -->
+<!-- ========================================================= -->
+<section class="drivers-page" id="drivers-page">
+    <div class="section-header" data-aos="fade-up">
+        <h2>Легендарные пилоты</h2>
+        <p class="section-sub">34 чемпиона мира в истории Формулы 1</p>
+    </div>
+    
+    <div class="drivers-grid-full">
+        <div class="driver-card-full" data-aos="flip-left" data-aos-duration="1000">
+            <img src="hamilton.jpg" alt="Hamilton" class="driver-photo-full">
+            <h3>Льюис Хэмилтон</h3>
+            <p>7-кратный чемпион</p>
+            <span class="stat" style="background: #c0c0c0; color: #000;">103 победы</span>
+            <div class="meta">
+                <span>🇬🇧 Великобритания</span>
+                <span>2007-2024</span>
             </div>
         </div>
-    </section>
-
-    <!-- ===================================================== -->
-    <!-- РЕКОРДЫ -->
-    <!-- ===================================================== -->
-    <section class="records" id="records">
-        <h2 data-aos="fade-right">Рекорды F1</h2>
-        <div class="records-grid">
-            <div class="record-card" data-aos="flip-up">
-                <i class="fas fa-trophy record-icon"></i>
-                <h3>Больше всего титулов</h3>
-                <p class="record-number">7</p>
-                <p>Хэмилтон • Шумахер</p>
-            </div>
-            <div class="record-card" data-aos="flip-up" data-aos-delay="200">
-                <i class="fas fa-flag-checkered record-icon"></i>
-                <h3>Больше всего побед</h3>
-                <p class="record-number">103</p>
-                <p>Льюис Хэмилтон</p>
-            </div>
-            <div class="record-card" data-aos="flip-up" data-aos-delay="400">
-                <i class="fas fa-clock record-icon"></i>
-                <h3>Самый быстрый пит-стоп</h3>
-                <p class="record-number">1.80 сек</p>
-                <p>Red Bull (2023)</p>
-            </div>
-            <div class="record-card" data-aos="flip-up" data-aos-delay="600">
-                <i class="fas fa-bolt record-icon"></i>
-                <h3>Максимальная скорость</h3>
-                <p class="record-number">372.5 км/ч</p>
-                <p>Valtteri Bottas</p>
+        
+        <div class="driver-card-full" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200">
+            <img src="schumacher.jpg" alt="Schumacher" class="driver-photo-full">
+            <h3>Михаэль Шумахер</h3>
+            <p>7-кратный чемпион</p>
+            <span class="stat" style="background: #ff0000;">91 победа</span>
+            <div class="meta">
+                <span>🇩🇪 Германия</span>
+                <span>1991-2012</span>
             </div>
         </div>
-    </section>
-
-    <!-- ===================================================== -->
-    <!-- КОНТАКТЫ -->
-    <!-- ===================================================== -->
-    <section class="contact" id="contact">
-        <div class="contact-content" data-aos="flip-up">
-            <h2>Свяжись с нами</h2>
-            <p>Погрузись в мир скорости вместе с нами</p>
-            <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-instagram"></i> Instagram</a>
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i> Twitter</a>
-                <a href="#" class="social-link"><i class="fab fa-youtube"></i> YouTube</a>
-                <a href="#" class="social-link"><i class="fab fa-tiktok"></i> TikTok</a>
+        
+        <div class="driver-card-full" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="400">
+            <img src="verstappen.jpg" alt="Verstappen" class="driver-photo-full">
+            <h3>Макс Ферстаппен</h3>
+            <p>Действующий чемпион</p>
+            <span class="stat" style="background: #1a1a2e;">54 победы</span>
+            <div class="meta">
+                <span>🇳🇱 Нидерланды</span>
+                <span>2015-2024</span>
             </div>
         </div>
-    </section>
-
-    <!-- ===================================================== -->
-    <!-- ПОДВАЛ -->
-    <!-- ===================================================== -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>🏎️ F1 Legends</h4>
-                <p>Ваш гид в мире Формулы 1</p>
-            </div>
-            <div class="footer-section">
-                <h4>Быстрые ссылки</h4>
-                <a href="#home">Главная</a>
-                <a href="#teams">Команды</a>
-                <a href="#records">Рекорды</a>
-            </div>
-            <div class="footer-section">
-                <h4>Контакты</h4>
-                <p>📧 info@f1legends.com</p>
+        
+        <div class="driver-card-full" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="600">
+            <img src="senna.jpg" alt="Senna" class="driver-photo-full">
+            <h3>Айртон Сенна</h3>
+            <p>3-кратный чемпион</p>
+            <span class="stat" style="background: #ff6b00;">41 победа</span>
+            <div class="meta">
+                <span>🇧🇷 Бразилия</span>
+                <span>1984-1994</span>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2026 F1 Legends | Сделано с ❤️ и скоростью</p>
+        
+        <div class="driver-card-full" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="800">
+            <img src="vettel.jpg" alt="Vettel" class="driver-photo-full">
+            <h3>Себастьян Феттель</h3>
+            <p>4-кратный чемпион</p>
+            <span class="stat" style="background: #0044ff;">53 победы</span>
+            <div class="meta">
+                <span>🇩🇪 Германия</span>
+                <span>2007-2022</span>
+            </div>
         </div>
-    </footer>
+        
+        <div class="driver-card-full" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000">
+            <img src="alonso.jpg" alt="Alonso" class="driver-photo-full">
+            <h3>Фернандо Алонсо</h3>
+            <p>2-кратный чемпион</p>
+            <span class="stat" style="background: #006400;">32 победы</span>
+            <div class="meta">
+                <span>🇪🇸 Испания</span>
+                <span>2001-2024</span>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+<!-- ========================================================= -->
+<!-- РЕКОРДЫ -->
+<!-- ========================================================= -->
+<section class="records" id="records">
+    <div class="section-header" data-aos="fade-up">
+        <h2>Рекорды F1</h2>
+        <p class="section-sub">Величайшие достижения в истории</p>
+    </div>
+    
+    <div class="records-grid">
+        <div class="record-card" data-aos="flip-up">
+            <div class="record-icon"><i class="fas fa-trophy"></i></div>
+            <div class="record-number">7</div>
+            <h3>Титулов</h3>
+            <p>Льюис Хэмилтон • Михаэль Шумахер</p>
+        </div>
+        
+        <div class="record-card" data-aos="flip-up" data-aos-delay="100">
+            <div class="record-icon"><i class="fas fa-flag-checkered"></i></div>
+            <div class="record-number">103</div>
+            <h3>Побед</h3>
+            <p>Льюис Хэмилтон</p>
+        </div>
+        
+        <div class="record-card" data-aos="flip-up" data-aos-delay="200">
+            <div class="record-icon"><i class="fas fa-clock"></i></div>
+            <div class="record-number">1.80</div>
+            <h3>Пит-стоп (сек)</h3>
+            <p>Red Bull Racing • 2023</p>
+        </div>
+        
+        <div class="record-card" data-aos="flip-up" data-aos-delay="300">
+            <div class="record-icon"><i class="fas fa-bolt"></i></div>
+            <div class="record-number">372.5</div>
+            <h3>Км/ч</h3>
+            <p>Valtteri Bottas • 2016</p>
+        </div>
+        
+        <div class="record-card" data-aos="flip-up" data-aos-delay="400">
+            <div class="record-icon"><i class="fas fa-users"></i></div>
+            <div class="record-number">74</div>
+            <h3>Сезонов</h3>
+            <p>С 1950 по 2024 год</p>
+        </div>
+        
+        <div class="record-card" data-aos="flip-up" data-aos-delay="500">
+            <div class="record-icon"><i class="fas fa-globe"></i></div>
+            <div class="record-number">21</div>
+            <h3>Стран</h3>
+            <p>Гонки проходят по всему миру</p>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================= -->
+<!-- КОНТАКТЫ -->
+<!-- ========================================================= -->
+<section class="contact" id="contact">
+    <div class="contact-content" data-aos="fade-up">
+        <h2>Свяжитесь с нами</h2>
+        <p>Будьте на связи с миром скорости</p>
+        
+        <div class="contact-info-grid">
+            <div class="contact-info-item">
+                <i class="fas fa-envelope"></i>
+                <h4>Email</h4>
+                <p>info@formula1.com</p>
+            </div>
+            <div class="contact-info-item">
+                <i class="fas fa-phone"></i>
+                <h4>Телефон</h4>
+                <p>+44 20 1234 5678</p>
+            </div>
+            <div class="contact-info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Адрес</h4>
+                <p>Лондон, Великобритания</p>
+            </div>
+        </div>
+        
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i> YouTube</a>
+            <a href="#" class="social-link"><i class="fab fa-tiktok"></i> TikTok</a>
+            <a href="#" class="social-link"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="#" class="social-link"><i class="fab fa-telegram"></i> Telegram</a>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================= -->
+<!-- ПОДВАЛ -->
+<!-- ========================================================= -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section footer-brand">
+            <h4>F1<span>.</span></h4>
+            <p>Ваш гид в мире Формулы 1</p>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h4>Навигация</h4>
+            <a href="#home">Главная</a>
+            <a href="#teams">Команды</a>
+            <a href="#drivers-page">Пилоты</a>
+            <a href="#records">Рекорды</a>
+            <a href="#contact">Контакты</a>
+        </div>
+        <div class="footer-section">
+            <h4>Команды</h4>
+            <a href="#team-ferrari">Ferrari</a>
+            <a href="#team-mercedes">Mercedes</a>
+            <a href="#team-redbull">Red Bull</a>
+            <a href="#team-mclaren">McLaren</a>
+            <a href="#team-aston">Aston Martin</a>
+        </div>
+        <div class="footer-section">
+            <h4>Контакты</h4>
+            <p>📧 info@formula1.com</p>
+            <p>📱 +44 20 1234 5678</p>
+            <p>📍 Лондон, Великобритания</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Formula 1. Все права защищены.</p>
+        <p>Сделано с ❤️ и скоростью</p>
+    </div>
+</footer>
+
+<!-- ========================================================= -->
+<!-- СКРИПТЫ -->
+<!-- ========================================================= -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
