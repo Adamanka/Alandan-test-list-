@@ -36,10 +36,24 @@ function animateCounters() {
 }
 
 // =========================================================
-// ЗАПУСК СЧЁТЧИКОВ ПРИ ЗАГРУЗКЕ
+// ЗАПУСК СЧЁТЧИКОВ
 // =========================================================
 window.addEventListener('load', function() {
     setTimeout(animateCounters, 500);
+});
+
+// =========================================================
+// КЛИК ПО КОМАНДЕ
+// =========================================================
+document.addEventListener('click', function(e) {
+    // Находим wrapper карточки
+    var wrapper = e.target.closest('.team-card-wrapper');
+    if (wrapper) {
+        var team = wrapper.getAttribute('data-team');
+        if (team) {
+            openTeam(team);
+        }
+    }
 });
 
 // =========================================================
@@ -108,7 +122,6 @@ if (navToggle && navMenu) {
     });
 }
 
-// Закрытие меню при клике на ссылку
 document.querySelectorAll('.nav-menu a').forEach(function(link) {
     link.addEventListener('click', function() {
         navMenu.classList.remove('active');
@@ -117,14 +130,13 @@ document.querySelectorAll('.nav-menu a').forEach(function(link) {
 });
 
 // =========================================================
-// ПЛАВНЫЙ СКРОЛЛ ДЛЯ ЯКОРЕЙ
+// ПЛАВНЫЙ СКРОЛЛ
 // =========================================================
 document.querySelectorAll('a[href^="#"]').forEach(function(link) {
     link.addEventListener('click', function(e) {
         var targetId = this.getAttribute('href');
         if (targetId === '#') return;
         
-        // Проверяем, не является ли ссылка внутри страницы команды
         var parentPage = this.closest('.team-page');
         if (parentPage) {
             var target = parentPage.querySelector(targetId);
@@ -138,7 +150,6 @@ document.querySelectorAll('a[href^="#"]').forEach(function(link) {
         var target = document.querySelector(targetId);
         if (target) {
             e.preventDefault();
-            // Закрываем все страницы команд
             document.querySelectorAll('.team-page').forEach(function(el) {
                 el.classList.remove('active');
             });
@@ -155,7 +166,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function(link) {
 });
 
 // =========================================================
-// СОЗДАНИЕ ПАРЯЩИХ ЧАСТИЦ
+// ПАРЯЩИЕ ЧАСТИЦЫ
 // =========================================================
 function createParticles() {
     var container = document.getElementById('particles-container');
@@ -177,7 +188,7 @@ function createParticles() {
 createParticles();
 
 // =========================================================
-// 3D ФОН (Three.js)
+// 3D ФОН
 // =========================================================
 var container = document.getElementById('three-canvas');
 
@@ -276,5 +287,4 @@ if (container) {
     });
 }
 
-console.log('🏎️ Formula 1 — Сайт полностью загружен!');
-console.log('🔥 Все анимации работают!');
+console.log('🏎️ Formula 1 — Клик по командам работает!');
