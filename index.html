@@ -41,10 +41,10 @@
             <i class="fas fa-flag-checkered"></i> F1<span>.</span>
         </div>
         <ul class="nav-menu" id="navMenu">
-            <li><a href="#home" class="active">Главная</a></li>
-            <li><a href="#teams">Команды</a></li>
-            <li><a href="#records">Рекорды</a></li>
-            <li><a href="#contact">Контакты</a></li>
+            <li><a href="#home" class="active"><i class="fas fa-home"></i>Главная</a></li>
+            <li><a href="#teams"><i class="fas fa-flag"></i>Команды</a></li>
+            <li><a href="#records"><i class="fas fa-trophy"></i>Рекорды</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i>Контакты</a></li>
         </ul>
         <div class="nav-toggle" id="navToggle">
             <span></span><span></span><span></span>
@@ -216,7 +216,7 @@
 </section>
 
 <!-- ========================================================= -->
-<!-- СТРАНИЦЫ КОМАНД (с иконками) -->
+<!-- СТРАНИЦЫ КОМАНД -->
 <!-- ========================================================= -->
 
 <!-- FERRARI -->
@@ -541,7 +541,7 @@
 </div>
 
 <!-- ========================================================= -->
-<!-- РЕКОРДЫ -->
+<!-- РЕКОРДЫ С МОДАЛЬНЫМИ ОКНАМИ -->
 <!-- ========================================================= -->
 <section class="records" id="records">
     <div class="section-header">
@@ -553,50 +553,287 @@
         </p>
     </div>
     <div class="records-grid">
-        <div class="record-card animate__animated animate__flipInY" data-aos="flip-up" data-aos-delay="0">
+        <!-- Рекорд 1 -->
+        <div class="record-card" data-aos="flip-up" data-aos-delay="0" onclick="openRecord('record1')">
             <div class="record-icon"><i class="fas fa-trophy"></i></div>
             <div class="record-number">7</div>
             <h3>Титулов</h3>
             <p><i class="fas fa-crown"></i> Хэмилтон • Шумахер</p>
             <div class="record-hover-effect"></div>
+            <div class="record-click-hint"><i class="fas fa-mouse-pointer"></i> Нажми для подробностей</div>
         </div>
-        <div class="record-card animate__animated animate__flipInY" data-aos="flip-up" data-aos-delay="100">
+        
+        <!-- Рекорд 2 -->
+        <div class="record-card" data-aos="flip-up" data-aos-delay="100" onclick="openRecord('record2')">
             <div class="record-icon"><i class="fas fa-flag-checkered"></i></div>
             <div class="record-number">103</div>
             <h3>Побед</h3>
             <p><i class="fas fa-crown"></i> Льюис Хэмилтон</p>
             <div class="record-hover-effect"></div>
+            <div class="record-click-hint"><i class="fas fa-mouse-pointer"></i> Нажми для подробностей</div>
         </div>
-        <div class="record-card animate__animated animate__flipInY" data-aos="flip-up" data-aos-delay="200">
+        
+        <!-- Рекорд 3 -->
+        <div class="record-card" data-aos="flip-up" data-aos-delay="200" onclick="openRecord('record3')">
             <div class="record-icon"><i class="fas fa-clock"></i></div>
             <div class="record-number">1.80</div>
             <h3>Пит-стоп (сек)</h3>
             <p><i class="fas fa-bull"></i> Red Bull Racing • 2023</p>
             <div class="record-hover-effect"></div>
+            <div class="record-click-hint"><i class="fas fa-mouse-pointer"></i> Нажми для подробностей</div>
         </div>
-        <div class="record-card animate__animated animate__flipInY" data-aos="flip-up" data-aos-delay="300">
+        
+        <!-- Рекорд 4 -->
+        <div class="record-card" data-aos="flip-up" data-aos-delay="300" onclick="openRecord('record4')">
             <div class="record-icon"><i class="fas fa-bolt"></i></div>
             <div class="record-number">372.5</div>
             <h3>Км/ч</h3>
             <p><i class="fas fa-flag"></i> Valtteri Bottas • 2016</p>
             <div class="record-hover-effect"></div>
+            <div class="record-click-hint"><i class="fas fa-mouse-pointer"></i> Нажми для подробностей</div>
         </div>
-        <div class="record-card animate__animated animate__flipInY" data-aos="flip-up" data-aos-delay="400">
+        
+        <!-- Рекорд 5 -->
+        <div class="record-card" data-aos="flip-up" data-aos-delay="400" onclick="openRecord('record5')">
             <div class="record-icon"><i class="fas fa-users"></i></div>
             <div class="record-number">74</div>
             <h3>Сезонов</h3>
             <p><i class="fas fa-history"></i> С 1950 по 2024 год</p>
             <div class="record-hover-effect"></div>
+            <div class="record-click-hint"><i class="fas fa-mouse-pointer"></i> Нажми для подробностей</div>
         </div>
-        <div class="record-card animate__animated animate__flipInY" data-aos="flip-up" data-aos-delay="500">
+        
+        <!-- Рекорд 6 -->
+        <div class="record-card" data-aos="flip-up" data-aos-delay="500" onclick="openRecord('record6')">
             <div class="record-icon"><i class="fas fa-globe"></i></div>
             <div class="record-number">21</div>
             <h3>Стран</h3>
             <p><i class="fas fa-map-marker-alt"></i> Гонки по всему миру</p>
             <div class="record-hover-effect"></div>
+            <div class="record-click-hint"><i class="fas fa-mouse-pointer"></i> Нажми для подробностей</div>
         </div>
     </div>
 </section>
+
+<!-- ========================================================= -->
+<!-- МОДАЛЬНЫЕ ОКНА РЕКОРДОВ -->
+<!-- ========================================================= -->
+
+<!-- Модальное окно 1 -->
+<div class="record-modal" id="record1-modal">
+    <div class="record-modal-overlay" onclick="closeRecord('record1')"></div>
+    <div class="record-modal-content">
+        <button class="record-modal-close" onclick="closeRecord('record1')"><i class="fas fa-times"></i></button>
+        <div class="record-modal-icon" style="background: linear-gradient(135deg, #ffd700, #ff6b00);">
+            <i class="fas fa-trophy"></i>
+        </div>
+        <h2>7 Титулов</h2>
+        <p class="record-modal-sub">Рекорд по количеству титулов чемпиона мира</p>
+        <div class="record-modal-info">
+            <div class="record-modal-item">
+                <span class="record-modal-label">🏆 Чемпионы</span>
+                <span class="record-modal-value">Льюис Хэмилтон • Михаэль Шумахер</span>
+            </div>
+            <div class="record-modal-item">
+                <span class="record-modal-label">📅 Годы</span>
+                <span class="record-modal-value">Хэмилтон: 2008, 2014, 2015, 2017, 2018, 2019, 2020<br>Шумахер: 1994, 1995, 2000, 2001, 2002, 2003, 2004</span>
+            </div>
+            <div class="record-modal-item">
+                <span class="record-modal-label">🏎️ Команды</span>
+                <span class="record-modal-value">Хэмилтон: McLaren, Mercedes<br>Шумахер: Benetton, Ferrari</span>
+            </div>
+            <div class="record-modal-item">
+                <span class="record-modal-label">📊 Факт</span>
+                <span class="record-modal-value">Оба пилота являются самыми титулованными в истории Формулы 1.</span>
+            </div>
+        </div>
+        <div class="record-modal-image-placeholder">
+            <i class="fas fa-image"></i>
+            <p>Здесь будет фото Хэмилтона и Шумахера</p>
+            <span class="image-hint">Добавьте: hamilton-schumacher.jpg</span>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно 2 -->
+<div class="record-modal" id="record2-modal">
+    <div class="record-modal-overlay" onclick="closeRecord('record2')"></div>
+    <div class="record-modal-content">
+        <button class="record-modal-close" onclick="closeRecord('record2')"><i class="fas fa-times"></i></button>
+        <div class="record-modal-icon" style="background: linear-gradient(135deg, #c0c0c0, #888);">
+            <i class="fas fa-flag-checkered"></i>
+        </div>
+        <h2>103 Победы</h2>
+        <p class="record-modal-sub">Рекорд по количеству побед в Гран-при</p>
+        <div class="record-modal-info">
+            <div class="record-modal-item">
+                <span class="record-modal-label">🏆 Пилот</span>
+                <span class="record-modal-value">Льюис Хэмилтон</span>
+            </div>
+            <div class="record-modal-item">
+                <span class="record-modal-label">📅 Период</span>
+                <span class="record-modal-value">2007 - 2024</span>
+            </div>
+            <div class="record-modal-item">
+                <span class="record-modal-label">🏎️ Команды</span>
+                <span class="record-modal-value">McLaren (21 победа), Mercedes (82 победы)</span>
+            </div>
+            <div class="record-modal-item">
+                <span class="record-modal-label">📊 Факт</span>
+                <span class="record-modal-value">Хэмилтон побил рекорд Шумахера (91 победа) в 2020 году.</span>
+            </div>
+        </div>
+        <div class="record-modal-image-placeholder">
+            <i class="fas fa-image"></i>
+            <p>Здесь будет фото Хэмилтона с победой</p>
+            <span class="image-hint">Добавьте: hamilton-win.jpg</span>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно 3 -->
+<div class="record-modal" id="record3-modal">
+    <div class="record-modal-overlay" onclick="closeRecord('record3')"></div>
+    <div class="record-modal-content">
+        <button class="record-modal-close" onclick="closeRecord('record3')"><i class="fas fa-times"></i></button>
+        <div class="record-modal-icon" style="background: linear-gradient(135deg, #1a1a2e, #000);">
+            <i class="fas fa-clock"></i>
+        </div>
+        <h2>1.80 Секунды</h2>
+        <p class="record-modal-sub">Самый быстрый пит-стоп в истории</p>
+        <div class="record-modal-info">
+            <div class="record-modal-item">
+                <span class="record-modal-label">🏎️ Команда</span>
+                <span class="record-modal-value">Red Bull Racing</span>
+            </div>
+            <div class="record-modal-item">
+                <span class="record-modal-label">📅 Год</span>
+                <span class="record-modal-value">2023</span>
+            </div>
+            <div class="record-modal-item">
+                <span class="record-modal-label">🏁 Гран-при</span>
+                <span class="record-modal-value">Великобритания (Сильверстоун)</span>
+            </div>
+            <div class="record-modal-item">
+                <span class="record-modal-label">📊 Факт</span>
+                <span class="record-modal-value">Предыдущий рекорд принадлежал McLaren (1.82 сек).</span>
+            </div>
+        </div>
+        <div class="record-modal-image-placeholder">
+            <i class="fas fa-image"></i>
+            <p>Здесь будет фото пит-стопа Red Bull</p>
+            <span class="image-hint">Добавьте: redbull-pitstop.jpg</span>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно 4 -->
+<div class="record-modal" id="record4-modal">
+    <div class="record-modal-overlay" onclick="closeRecord('record4')"></div>
+    <div class="record-modal-content">
+        <button class="record-modal-close" onclick="closeRecord('record4')"><i class="fas fa-times"></i></button>
+        <div class="record-modal-icon" style="background: linear-gradient(135deg, #ff0000, #cc0000);">
+            <i class="fas fa-bolt"></i>
+        </div>
+        <h2>372.5 Км/ч</h2>
+        <p class="record-modal-sub">Максимальная скорость в истории F1</p>
+        <div class="record-modal-info">
+            <div class="record-modal-item">
+                <span class="record-modal-label">🏎️ Пилот</span>
+                <span class="record-modal-value">Valtteri Bottas</span>
+            </div>
+            <div class="record-modal-item">
+                <span class="record-modal-label">🏁 Команда</span>
+                <span class="record-modal-value">Williams</span>
+            </div>
+            <div class="record-modal-item">
+                <span class="record-modal-label">📅 Год</span>
+                <span class="record-modal-value">2016</span>
+            </div>
+            <div class="record-modal-item">
+                <span class="record-modal-label">📊 Факт</span>
+                <span class="record-modal-value">Рекорд был установлен на трассе в Азербайджане.</span>
+            </div>
+        </div>
+        <div class="record-modal-image-placeholder">
+            <i class="fas fa-image"></i>
+            <p>Здесь будет фото болида Williams</p>
+            <span class="image-hint">Добавьте: williams-speed.jpg</span>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно 5 -->
+<div class="record-modal" id="record5-modal">
+    <div class="record-modal-overlay" onclick="closeRecord('record5')"></div>
+    <div class="record-modal-content">
+        <button class="record-modal-close" onclick="closeRecord('record5')"><i class="fas fa-times"></i></button>
+        <div class="record-modal-icon" style="background: linear-gradient(135deg, #0066cc, #0033aa);">
+            <i class="fas fa-users"></i>
+        </div>
+        <h2>74 Сезона</h2>
+        <p class="record-modal-sub">История Формулы 1</p>
+        <div class="record-modal-info">
+            <div class="record-modal-item">
+                <span class="record-modal-label">📅 Первый сезон</span>
+                <span class="record-modal-value">1950 год (Великобритания)</span>
+            </div>
+            <div class="record-modal-item">
+                <span class="record-modal-label">🏆 Первый чемпион</span>
+                <span class="record-modal-value">Джузеппе Фарина (Alfa Romeo)</span>
+            </div>
+            <div class="record-modal-item">
+                <span class="record-modal-label">📊 Гонок за историю</span>
+                <span class="record-modal-value">Более 1100 Гран-при</span>
+            </div>
+            <div class="record-modal-item">
+                <span class="record-modal-label">📊 Факт</span>
+                <span class="record-modal-value">Формула 1 — один из старейших и престижнейших чемпионатов в мире.</span>
+            </div>
+        </div>
+        <div class="record-modal-image-placeholder">
+            <i class="fas fa-image"></i>
+            <p>Здесь будет фото первого болида F1</p>
+            <span class="image-hint">Добавьте: first-f1-car.jpg</span>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно 6 -->
+<div class="record-modal" id="record6-modal">
+    <div class="record-modal-overlay" onclick="closeRecord('record6')"></div>
+    <div class="record-modal-content">
+        <button class="record-modal-close" onclick="closeRecord('record6')"><i class="fas fa-times"></i></button>
+        <div class="record-modal-icon" style="background: linear-gradient(135deg, #00b8b8, #008888);">
+            <i class="fas fa-globe"></i>
+        </div>
+        <h2>21 Страна</h2>
+        <p class="record-modal-sub">География Формулы 1</p>
+        <div class="record-modal-info">
+            <div class="record-modal-item">
+                <span class="record-modal-label">🌍 Континенты</span>
+                <span class="record-modal-value">Европа, Азия, Америка, Австралия, Ближний Восток</span>
+            </div>
+            <div class="record-modal-item">
+                <span class="record-modal-label">🏁 Самые известные трассы</span>
+                <span class="record-modal-value">Монако, Сильверстоун, Спа, Монца, Сингапур</span>
+            </div>
+            <div class="record-modal-item">
+                <span class="record-modal-label">📊 Гран-при в сезоне</span>
+                <span class="record-modal-value">24 гонки в 2024 году</span>
+            </div>
+            <div class="record-modal-item">
+                <span class="record-modal-label">📊 Факт</span>
+                <span class="record-modal-value">Формула 1 — единственный чемпионат, который посещает все континенты, кроме Антарктиды.</span>
+            </div>
+        </div>
+        <div class="record-modal-image-placeholder">
+            <i class="fas fa-image"></i>
+            <p>Здесь будет карта мира с трассами</p>
+            <span class="image-hint">Добавьте: f1-world-map.jpg</span>
+        </div>
+    </div>
+</div>
 
 <!-- ========================================================= -->
 <!-- КОНТАКТЫ -->
