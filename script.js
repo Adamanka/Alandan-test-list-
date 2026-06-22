@@ -130,7 +130,7 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
 });
 
 // =========================================================
-// ПЛАВНЫЙ СКРОЛЛ ДЛЯ ЯКОРЕЙ (в том числе рекорды команд)
+// ПЛАВНЫЙ СКРОЛЛ
 // =========================================================
 document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', function(e) {
@@ -139,23 +139,14 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         const target = document.querySelector(targetId);
         if (target) {
             e.preventDefault();
-            // Закрываем страницу команды, если она открыта, но только если переход не внутри той же страницы
-            // Проверяем, является ли target частью текущей открытой страницы команды
             const teamPage = target.closest('.team-page');
             if (teamPage) {
-                // Если мы уже на странице команды, просто скроллим
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             } else {
-                // Если переходим на другую страницу, сначала закрываем все team-page
                 document.querySelectorAll('.team-page').forEach(p => p.style.display = 'none');
-                // Затем открываем нужную (если это страница команды)
                 if (targetId.startsWith('#team-')) {
-                    // Если это страница команды, она откроется через :target
-                    // Но чтобы сработало, нужно чтобы display: block; был установлен
-                    // Мы просто перейдем по ссылке, браузер сам обработает :target
                     window.location.hash = targetId;
                 } else {
-                    // Иначе просто скроллим к секции
                     setTimeout(() => {
                         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }, 100);
@@ -166,7 +157,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 });
 
 // =========================================================
-// ЗАКРЫТИЕ СТРАНИЦЫ КОМАНДЫ ПРИ НАЖАТИИ НА BACK
+// ЗАКРЫТИЕ СТРАНИЦЫ КОМАНДЫ
 // =========================================================
 document.querySelectorAll('.back-btn, .btn-secondary').forEach(link => {
     link.addEventListener('click', function(e) {
@@ -184,10 +175,5 @@ document.querySelectorAll('.back-btn, .btn-secondary').forEach(link => {
     });
 });
 
-// =========================================================
-// КОНСОЛЬ
-// =========================================================
-console.log('🏎️ Formula 1 — Обновлённый сайт');
-console.log('🔥 Текст увеличен, фон светлее, текст белый');
-console.log('📊 Рекорды команд добавлены');
-console.log('✨ Плавный скролл к рекордам работает');
+console.log('🏎️ Formula 1 — Сайт работает!');
+console.log('🔥 Все ошибки исправлены!');
