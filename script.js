@@ -63,4 +63,59 @@ if (container) {
     light.position.set(10, 10, 10);
     scene.add(light);
     
-    const light2
+    const light2 = new THREE.PointLight(0x0066ff, 0.5);
+    light2.position.set(-10, -10, -10);
+    scene.add(light2);
+
+    camera.position.z = 5;
+
+    // АНИМАЦИЯ
+    function animate() {
+        requestAnimationFrame(animate);
+        
+        torusKnot.rotation.x += 0.005;
+        torusKnot.rotation.y += 0.01;
+        
+        particlesMesh.rotation.y += 0.0005;
+        
+        renderer.render(scene, camera);
+    }
+    
+    animate();
+
+    // АДАПТАЦИЯ
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+}
+
+// ПАРАЛЛАКС
+document.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+    
+    const heroContent = document.querySelector('.hero-content');
+    if (heroContent) {
+        heroContent.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+    }
+});
+
+// ПЛАВНАЯ НАВИГАЦИЯ
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+console.log('🏎️ Formula 1 с 3D анимациями загружен!');
