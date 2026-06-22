@@ -16,6 +16,7 @@ function animateCounters() {
     document.querySelectorAll('.hero-stat').forEach(function(stat) {
         var target = parseInt(stat.getAttribute('data-count'));
         var numberEl = stat.querySelector('.stat-num');
+        if (!numberEl) return;
         var current = 0;
         var increment = Math.ceil(target / 60);
         
@@ -34,7 +35,9 @@ function animateCounters() {
     });
 }
 
-// Запускаем анимацию счётчиков при загрузке
+// =========================================================
+// ЗАПУСК СЧЁТЧИКОВ ПРИ ЗАГРУЗКЕ
+// =========================================================
 window.addEventListener('load', function() {
     setTimeout(animateCounters, 500);
 });
@@ -43,6 +46,7 @@ window.addEventListener('load', function() {
 // ОТКРЫТИЕ СТРАНИЦЫ КОМАНДЫ
 // =========================================================
 function openTeam(teamName) {
+    // Закрываем все открытые страницы
     document.querySelectorAll('.team-page').forEach(function(el) {
         el.classList.remove('active');
     });
@@ -50,6 +54,7 @@ function openTeam(teamName) {
         el.classList.remove('active');
     });
     
+    // Открываем нужную страницу
     var page = document.getElementById('team-' + teamName);
     var overlay = document.getElementById('team-' + teamName + '-overlay');
     
@@ -103,6 +108,7 @@ if (navToggle && navMenu) {
     });
 }
 
+// Закрытие меню при клике на ссылку
 document.querySelectorAll('.nav-menu a').forEach(function(link) {
     link.addEventListener('click', function() {
         navMenu.classList.remove('active');
@@ -111,13 +117,14 @@ document.querySelectorAll('.nav-menu a').forEach(function(link) {
 });
 
 // =========================================================
-// ПЛАВНЫЙ СКРОЛЛ
+// ПЛАВНЫЙ СКРОЛЛ ДЛЯ ЯКОРЕЙ
 // =========================================================
 document.querySelectorAll('a[href^="#"]').forEach(function(link) {
     link.addEventListener('click', function(e) {
         var targetId = this.getAttribute('href');
         if (targetId === '#') return;
         
+        // Проверяем, не является ли ссылка внутри страницы команды
         var parentPage = this.closest('.team-page');
         if (parentPage) {
             var target = parentPage.querySelector(targetId);
@@ -131,6 +138,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function(link) {
         var target = document.querySelector(targetId);
         if (target) {
             e.preventDefault();
+            // Закрываем все страницы команд
             document.querySelectorAll('.team-page').forEach(function(el) {
                 el.classList.remove('active');
             });
@@ -268,6 +276,5 @@ if (container) {
     });
 }
 
-console.log('🏎️ Formula 1 — Сайт с анимациями!');
-console.log('🔥 Команды открываются, счётчики анимированы');
-console.log('✨ Парящие частицы на фоне');
+console.log('🏎️ Formula 1 — Сайт полностью загружен!');
+console.log('🔥 Все анимации работают!');
