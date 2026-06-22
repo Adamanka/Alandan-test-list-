@@ -46,7 +46,6 @@ window.addEventListener('load', function() {
 // КЛИК ПО КОМАНДЕ
 // =========================================================
 document.addEventListener('click', function(e) {
-    // Находим wrapper карточки
     var wrapper = e.target.closest('.team-card-wrapper');
     if (wrapper) {
         var team = wrapper.getAttribute('data-team');
@@ -60,7 +59,6 @@ document.addEventListener('click', function(e) {
 // ОТКРЫТИЕ СТРАНИЦЫ КОМАНДЫ
 // =========================================================
 function openTeam(teamName) {
-    // Закрываем все открытые страницы
     document.querySelectorAll('.team-page').forEach(function(el) {
         el.classList.remove('active');
     });
@@ -68,7 +66,6 @@ function openTeam(teamName) {
         el.classList.remove('active');
     });
     
-    // Открываем нужную страницу
     var page = document.getElementById('team-' + teamName);
     var overlay = document.getElementById('team-' + teamName + '-overlay');
     
@@ -95,10 +92,35 @@ function closeTeam(teamName) {
 }
 
 // =========================================================
+// ОТКРЫТИЕ МОДАЛЬНОГО ОКНА РЕКОРДА
+// =========================================================
+function openRecord(recordId) {
+    var modal = document.getElementById(recordId + '-modal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// =========================================================
+// ЗАКРЫТИЕ МОДАЛЬНОГО ОКНА РЕКОРДА
+// =========================================================
+function closeRecord(recordId) {
+    var modal = document.getElementById(recordId + '-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// =========================================================
 // ЗАКРЫТИЕ ПО ESC
 // =========================================================
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
+        document.querySelectorAll('.record-modal.active').forEach(function(el) {
+            el.classList.remove('active');
+        });
         document.querySelectorAll('.team-page.active').forEach(function(el) {
             el.classList.remove('active');
         });
@@ -287,4 +309,5 @@ if (container) {
     });
 }
 
-console.log('🏎️ Formula 1 — Клик по командам работает!');
+console.log('🏎️ Formula 1 — Все функции работают!');
+console.log('🔥 Клик по командам и рекордам работает!');
