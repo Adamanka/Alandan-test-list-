@@ -1,6 +1,3 @@
-/* ========================================================= */
-/* БАЗА */
-/* ========================================================= */
 * {
     margin: 0;
     padding: 0;
@@ -10,13 +7,10 @@
 
 :root {
     --primary: #cc0000;
-    --dark: #1a1a1a;          /* светлее */
-    --dark-card: rgba(255,255,255,0.03);
+    --dark: #1a1a1a;
     --border: rgba(255,255,255,0.06);
     --text: #ffffff;
-    --text-light: #f0f0f0;
-    --text-gray: #dddddd;      /* белее */
-    --text-muted: #bbbbbb;
+    --text-gray: #dddddd;
     --text-dark: #999999;
     --gold: #ffd700;
     --font: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -30,9 +24,6 @@ body {
     font-weight: 300;
 }
 
-/* ========================================================= */
-/* 3D ФОН — СВЕТЛЕЕ */
-/* ========================================================= */
 #three-canvas {
     position: fixed;
     top: 0;
@@ -40,13 +31,10 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: 0.25;            /* увеличенная прозрачность */
+    opacity: 0.25;
     background: radial-gradient(ellipse at center, #2a2a2a, #1a1a1a);
 }
 
-/* ========================================================= */
-/* НАВИГАЦИЯ */
-/* ========================================================= */
 .navbar {
     position: fixed;
     top: 0;
@@ -55,7 +43,7 @@ body {
     background: rgba(26,26,26,0.85);
     backdrop-filter: blur(16px);
     z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid var(--border);
 }
 
 .nav-container {
@@ -73,10 +61,7 @@ body {
     letter-spacing: 1px;
     color: var(--text);
 }
-
-.logo span {
-    color: var(--primary);
-}
+.logo span { color: var(--primary); }
 
 .nav-menu {
     display: flex;
@@ -106,15 +91,8 @@ body {
     transition: width 0.3s ease;
 }
 
-.nav-menu a:hover::after,
-.nav-menu a.active::after {
-    width: 100%;
-}
-
-.nav-menu a:hover,
-.nav-menu a.active {
-    color: var(--text);
-}
+.nav-menu a:hover::after, .nav-menu a.active::after { width: 100%; }
+.nav-menu a:hover, .nav-menu a.active { color: var(--text); }
 
 .nav-toggle {
     display: none;
@@ -122,7 +100,6 @@ body {
     gap: 5px;
     cursor: pointer;
 }
-
 .nav-toggle span {
     width: 25px;
     height: 2px;
@@ -130,9 +107,6 @@ body {
     transition: 0.3s ease;
 }
 
-/* ========================================================= */
-/* ГЛАВНЫЙ ЭКРАН */
-/* ========================================================= */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -144,15 +118,7 @@ body {
     background: radial-gradient(ellipse at center, rgba(204,0,0,0.05), transparent 70%);
 }
 
-.hero-bg-gradient {
-    display: none;
-}
-
-.hero-content {
-    max-width: 850px;
-    position: relative;
-    z-index: 2;
-}
+.hero-content { max-width: 850px; position: relative; z-index: 2; }
 
 .hero-badge {
     display: inline-flex;
@@ -187,10 +153,7 @@ body {
     line-height: 1.05;
     color: var(--text);
 }
-
-.glitch-text span {
-    color: var(--primary);
-}
+.glitch-text span { color: var(--primary); }
 
 .subtitle {
     font-size: 1rem;
@@ -203,7 +166,7 @@ body {
 
 .description {
     font-size: 0.95rem;
-    color: var(--text-muted);
+    color: var(--text-dark);
     line-height: 1.9;
     max-width: 600px;
     margin: 0 auto 35px;
@@ -216,18 +179,13 @@ body {
     gap: 50px;
     margin-bottom: 40px;
 }
-
-.hero-stat {
-    text-align: center;
-}
-
+.hero-stat { text-align: center; }
 .stat-num {
     display: block;
     font-size: 2rem;
     font-weight: 600;
     color: var(--primary);
 }
-
 .stat-label {
     font-size: 0.6rem;
     color: var(--text-dark);
@@ -242,8 +200,7 @@ body {
     flex-wrap: wrap;
 }
 
-.btn-primary,
-.btn-outline {
+.btn-primary, .btn-outline {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -262,7 +219,6 @@ body {
     background: var(--primary);
     color: var(--text);
 }
-
 .btn-primary:hover {
     background: var(--text);
     color: var(--dark);
@@ -274,7 +230,6 @@ body {
     color: var(--text-gray);
     background: transparent;
 }
-
 .btn-outline:hover {
     border-color: var(--primary);
     color: var(--text);
@@ -302,21 +257,13 @@ body {
     50% { transform: translateX(-50%) translateY(-10px); }
 }
 
-/* ========================================================= */
-/* СЕКЦИИ */
-/* ========================================================= */
-.section-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
+.section-header { text-align: center; margin-bottom: 50px; }
 .section-header h2 {
     font-size: 2.5rem;
     font-weight: 600;
     letter-spacing: 4px;
     color: var(--text);
 }
-
 .section-sub {
     color: var(--text-gray);
     font-size: 0.9rem;
@@ -324,9 +271,6 @@ body {
     margin-top: 8px;
 }
 
-/* ========================================================= */
-/* КОМАНДЫ */
-/* ========================================================= */
 .teams-grid-section {
     padding: 100px 20px;
     max-width: 1200px;
@@ -343,17 +287,14 @@ body {
     gap: 24px;
 }
 
-.team-card-link {
-    text-decoration: none;
-    display: block;
-}
+.team-card-link { text-decoration: none; display: block; }
 
 .team-card {
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.04);
     padding: 32px 20px 28px;
     text-align: center;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.5s ease;
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -372,7 +313,7 @@ body {
     color: var(--text-dark);
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.04);
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.5s ease;
 }
 
 .team-card h3 {
@@ -381,7 +322,6 @@ body {
     letter-spacing: 1px;
     color: var(--text);
 }
-
 .team-card p {
     color: var(--text-dark);
     font-size: 0.75rem;
@@ -412,7 +352,6 @@ body {
     transition: opacity 0.4s ease;
     border-radius: 4px;
 }
-
 .team-card-hover span {
     color: var(--text);
     font-size: 0.75rem;
@@ -424,12 +363,8 @@ body {
 .team-card:hover {
     transform: translateY(-6px);
 }
+.team-card:hover .team-card-hover { opacity: 1; }
 
-.team-card:hover .team-card-hover {
-    opacity: 1;
-}
-
-/* Свечение при наведении (оставляем как было) */
 .team-card-link[href="#team-ferrari"] .team-card:hover {
     border-color: #ff0000;
     box-shadow: 0 0 40px rgba(255,0,0,0.12);
@@ -439,12 +374,43 @@ body {
     border-color: #ff0000;
     color: #ff0000;
 }
-/* ... аналогично для других команд (код уже есть в предыдущих версиях) */
-/* Для краткости оставляем только Ferrari, остальные аналогичны */
+.team-card-link[href="#team-mercedes"] .team-card:hover {
+    border-color: #c0c0c0;
+    box-shadow: 0 0 40px rgba(192,192,192,0.1);
+}
+.team-card-link[href="#team-mercedes"] .team-card:hover .team-card-icon {
+    background: rgba(192,192,192,0.1);
+    border-color: #c0c0c0;
+    color: #c0c0c0;
+}
+.team-card-link[href="#team-redbull"] .team-card:hover {
+    border-color: #1a1a2e;
+    box-shadow: 0 0 40px rgba(26,26,46,0.15);
+}
+.team-card-link[href="#team-redbull"] .team-card:hover .team-card-icon {
+    background: rgba(26,26,46,0.15);
+    border-color: #1a1a2e;
+    color: #1a1a2e;
+}
+.team-card-link[href="#team-mclaren"] .team-card:hover {
+    border-color: #ff6b00;
+    box-shadow: 0 0 40px rgba(255,107,0,0.12);
+}
+.team-card-link[href="#team-mclaren"] .team-card:hover .team-card-icon {
+    background: rgba(255,107,0,0.12);
+    border-color: #ff6b00;
+    color: #ff6b00;
+}
+.team-card-link[href="#team-aston"] .team-card:hover {
+    border-color: #006400;
+    box-shadow: 0 0 40px rgba(0,100,0,0.12);
+}
+.team-card-link[href="#team-aston"] .team-card:hover .team-card-icon {
+    background: rgba(0,100,0,0.12);
+    border-color: #006400;
+    color: #006400;
+}
 
-/* ========================================================= */
-/* СТРАНИЦЫ КОМАНД */
-/* ========================================================= */
 .team-page {
     display: none;
     position: fixed;
@@ -486,10 +452,7 @@ body {
     margin-bottom: 40px;
     transition: color 0.3s ease;
 }
-
-.back-btn:hover {
-    color: var(--text);
-}
+.back-btn:hover { color: var(--text); }
 
 .team-page-content {
     display: grid;
@@ -565,7 +528,7 @@ body {
 
 .team-page-desc {
     color: var(--text-light);
-    font-size: 1.05rem;          /* Увеличен */
+    font-size: 1.05rem;
     line-height: 1.9;
     max-width: 500px;
     margin: 20px 0 30px;
@@ -590,51 +553,39 @@ body {
     align-items: center;
     gap: 20px;
     padding: 14px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid var(--border);
     transition: all 0.3s ease;
 }
-
-.team-page-driver:hover {
-    padding-left: 10px;
-}
-
-.team-page-driver:last-child {
-    border-bottom: none;
-}
+.team-page-driver:hover { padding-left: 10px; }
+.team-page-driver:last-child { border-bottom: none; }
 
 .team-page-driver img {
     width: 55px;
     height: 55px;
     border-radius: 50%;
     object-fit: cover;
-    border: 1px solid rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
 }
 
 .team-page-driver .driver-info h4 {
-    font-size: 1.2rem;          /* Увеличен */
+    font-size: 1.2rem;
     font-weight: 500;
     color: var(--text);
 }
-
 .team-page-driver .driver-info p {
     font-size: 0.9rem;
     color: var(--text-gray);
 }
-
 .team-page-driver .driver-stats {
     font-size: 0.8rem;
     color: var(--text-muted);
     display: block;
 }
-
 .team-page-driver .driver-period {
     font-size: 0.75rem;
     color: #888;
 }
 
-/* ========================================================= */
-/* РЕКОРДЫ КОМАНДЫ */
-/* ========================================================= */
 .team-records {
     margin: 30px 0 35px;
     padding: 20px 25px;
@@ -654,19 +605,14 @@ body {
     list-style: none;
     padding: 0;
 }
-
 .records-list li {
     color: var(--text-light);
     font-size: 0.9rem;
     line-height: 1.8;
     padding: 4px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.02);
+    border-bottom: 1px solid var(--border);
 }
-
-.records-list li:last-child {
-    border-bottom: none;
-}
-
+.records-list li:last-child { border-bottom: none; }
 .records-list li strong {
     color: var(--primary);
     font-weight: 600;
@@ -684,7 +630,7 @@ body {
     align-items: center;
     gap: 10px;
     padding: 12px 32px;
-    border: 1px solid rgba(255,255,255,0.06);
+    border: 1px solid var(--border);
     color: var(--text-gray);
     text-decoration: none;
     font-size: 0.6rem;
@@ -692,7 +638,6 @@ body {
     text-transform: uppercase;
     transition: all 0.3s ease;
 }
-
 .btn-secondary:hover {
     border-color: var(--primary);
     color: var(--text);
@@ -706,14 +651,8 @@ body {
     text-transform: uppercase;
     transition: color 0.3s ease;
 }
+.btn-link:hover { color: var(--primary); }
 
-.btn-link:hover {
-    color: var(--primary);
-}
-
-/* ========================================================= */
-/* ОБЩИЕ РЕКОРДЫ */
-/* ========================================================= */
 .records {
     padding: 100px 20px;
     max-width: 1200px;
@@ -732,12 +671,11 @@ body {
 
 .record-card {
     background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
     padding: 30px 20px;
     text-align: center;
     transition: all 0.3s ease;
 }
-
 .record-card:hover {
     border-color: var(--gold);
     transform: translateY(-4px);
@@ -748,14 +686,12 @@ body {
     color: var(--gold);
     margin-bottom: 10px;
 }
-
 .record-number {
     font-size: 2.8rem;
     font-weight: 600;
     color: var(--primary);
     letter-spacing: 1px;
 }
-
 .record-card h3 {
     color: var(--text-gray);
     font-size: 0.8rem;
@@ -764,15 +700,11 @@ body {
     text-transform: uppercase;
     margin: 8px 0;
 }
-
 .record-card p {
     color: var(--text-dark);
     font-size: 0.7rem;
 }
 
-/* ========================================================= */
-/* КОНТАКТЫ */
-/* ========================================================= */
 .contact {
     padding: 100px 20px;
     max-width: 1200px;
@@ -785,7 +717,7 @@ body {
 
 .contact-content {
     background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
     padding: 60px;
     text-align: center;
     width: 100%;
@@ -797,7 +729,6 @@ body {
     letter-spacing: 4px;
     color: var(--text);
 }
-
 .contact-content > p {
     color: var(--text-dark);
     font-size: 0.85rem;
@@ -814,7 +745,7 @@ body {
 
 .social-link {
     padding: 14px 32px;
-    border: 1px solid rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
     color: var(--text-gray);
     text-decoration: none;
     font-size: 0.6rem;
@@ -830,52 +761,49 @@ body {
 .social-link.instagram:hover {
     background: radial-gradient(circle at 30% 30%, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
     border-color: #dc2743;
-    color: #ffffff;
+    color: #fff;
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(220, 39, 67, 0.3);
+    box-shadow: 0 8px 30px rgba(220,39,67,0.3);
 }
 .social-link.twitter:hover {
     background: #1DA1F2;
     border-color: #1DA1F2;
-    color: #ffffff;
+    color: #fff;
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(29, 161, 242, 0.3);
+    box-shadow: 0 8px 30px rgba(29,161,242,0.3);
 }
 .social-link.youtube:hover {
     background: #FF0000;
     border-color: #FF0000;
-    color: #ffffff;
+    color: #fff;
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(255, 0, 0, 0.3);
+    box-shadow: 0 8px 30px rgba(255,0,0,0.3);
 }
 .social-link.tiktok:hover {
     background: linear-gradient(135deg, #00f2ea, #ff0050);
     border-color: #ff0050;
-    color: #ffffff;
+    color: #fff;
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(255, 0, 80, 0.3);
+    box-shadow: 0 8px 30px rgba(255,0,80,0.3);
 }
 .social-link.facebook:hover {
     background: #1877F2;
     border-color: #1877F2;
-    color: #ffffff;
+    color: #fff;
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(24, 119, 242, 0.3);
+    box-shadow: 0 8px 30px rgba(24,119,242,0.3);
 }
 .social-link.telegram:hover {
     background: #0088cc;
     border-color: #0088cc;
-    color: #ffffff;
+    color: #fff;
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(0, 136, 204, 0.3);
+    box-shadow: 0 8px 30px rgba(0,136,204,0.3);
 }
 
-/* ========================================================= */
-/* ПОДВАЛ */
-/* ========================================================= */
 footer {
     background: rgba(26,26,26,0.95);
-    border-top: 1px solid rgba(255,255,255,0.04);
+    border-top: 1px solid var(--border);
     padding: 50px 20px 25px;
 }
 
@@ -886,7 +814,7 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 40px;
     padding-bottom: 30px;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid var(--border);
 }
 
 .footer-section h4 {
@@ -897,17 +825,12 @@ footer {
     text-transform: uppercase;
     margin-bottom: 15px;
 }
-
-.footer-section h4 span {
-    color: var(--primary);
-}
-
+.footer-section h4 span { color: var(--primary); }
 .footer-section p {
     color: var(--text-dark);
     font-size: 0.75rem;
     line-height: 1.8;
 }
-
 .footer-section a {
     display: block;
     color: var(--text-dark);
@@ -916,10 +839,7 @@ footer {
     margin: 6px 0;
     transition: color 0.3s ease;
 }
-
-.footer-section a:hover {
-    color: var(--text-gray);
-}
+.footer-section a:hover { color: var(--text-gray); }
 
 .footer-bottom {
     text-align: center;
@@ -929,41 +849,24 @@ footer {
     letter-spacing: 1px;
 }
 
-/* ========================================================= */
-/* АДАПТИВ */
-/* ========================================================= */
+.nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
 @media (max-width: 1024px) {
     .team-page-content {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    .team-page-desc {
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .team-page-stats {
-        justify-content: center;
-    }
-    .team-page-driver {
-        justify-content: center;
-        flex-direction: column;
-        text-align: center;
-    }
-    .team-page-actions {
-        justify-content: center;
-    }
+    .team-page-desc { max-width: 100%; margin-left: auto; margin-right: auto; }
+    .team-page-stats { justify-content: center; }
+    .team-page-driver { justify-content: center; flex-direction: column; text-align: center; }
+    .team-page-actions { justify-content: center; }
 }
 
 @media (max-width: 768px) {
-    .glitch-text {
-        font-size: 3rem;
-        letter-spacing: 3px;
-    }
-    .subtitle {
-        font-size: 0.8rem;
-        letter-spacing: 4px;
-    }
+    .glitch-text { font-size: 3rem; letter-spacing: 3px; }
+    .subtitle { font-size: 0.8rem; letter-spacing: 4px; }
     .nav-menu {
         display: none;
         flex-direction: column;
@@ -974,93 +877,33 @@ footer {
         width: 100%;
         background: rgba(26,26,26,0.98);
         padding: 20px 30px;
-        border-bottom: 1px solid rgba(255,255,255,0.04);
+        border-bottom: 1px solid var(--border);
     }
-    .nav-menu.active {
-        display: flex;
-    }
-    .nav-toggle {
-        display: flex;
-    }
-    .teams-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-    }
-    .team-card {
-        padding: 24px 16px 20px;
-    }
-    .team-card h3 {
-        font-size: 0.95rem;
-    }
-    .team-card p {
-        font-size: 0.65rem;
-    }
-    .team-card-icon {
-        width: 44px;
-        height: 44px;
-        font-size: 1rem;
-    }
-    .section-header h2 {
-        font-size: 1.8rem;
-    }
-    .team-page-right h1 {
-        font-size: 2.5rem;
-    }
-    .team-page-car {
-        max-width: 300px;
-    }
-    .records-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .contact-content {
-        padding: 30px 20px;
-    }
-    .hero-stats {
-        gap: 30px;
-    }
-    .stat-num {
-        font-size: 1.5rem;
-    }
+    .nav-menu.active { display: flex; }
+    .nav-toggle { display: flex; }
+    .teams-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .team-card { padding: 24px 16px 20px; }
+    .team-card h3 { font-size: 0.95rem; }
+    .team-card p { font-size: 0.65rem; }
+    .team-card-icon { width: 44px; height: 44px; font-size: 1rem; }
+    .section-header h2 { font-size: 1.8rem; }
+    .team-page-right h1 { font-size: 2.5rem; }
+    .team-page-car { max-width: 300px; }
+    .records-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-content { padding: 30px 20px; }
+    .hero-stats { gap: 30px; }
+    .stat-num { font-size: 1.5rem; }
 }
 
 @media (max-width: 480px) {
-    .glitch-text {
-        font-size: 2rem;
-    }
-    .teams-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-    }
-    .team-card {
-        padding: 18px 12px 16px;
-    }
-    .team-card h3 {
-        font-size: 0.8rem;
-    }
-    .team-card p {
-        font-size: 0.55rem;
-    }
-    .team-card-icon {
-        width: 36px;
-        height: 36px;
-        font-size: 0.8rem;
-        margin-bottom: 10px;
-    }
-    .team-card-arrow {
-        display: none;
-    }
-    .records-grid {
-        grid-template-columns: 1fr;
-    }
-    .hero-stats {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .contact-info-grid {
-        grid-template-columns: 1fr;
-    }
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+    .glitch-text { font-size: 2rem; }
+    .teams-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .team-card { padding: 18px 12px 16px; }
+    .team-card h3 { font-size: 0.8rem; }
+    .team-card p { font-size: 0.55rem; }
+    .team-card-icon { width: 36px; height: 36px; font-size: 0.8rem; margin-bottom: 10px; }
+    .team-card-arrow { display: none; }
+    .records-grid { grid-template-columns: 1fr; }
+    .hero-stats { flex-direction: column; gap: 15px; }
+    .footer-content { grid-template-columns: 1fr; text-align: center; }
 }
