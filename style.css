@@ -89,7 +89,7 @@ body {
     padding: 16px 0;
     background: rgba(13,13,13,0.85);
     backdrop-filter: blur(16px);
-    z-index: 1000;
+    z-index: 1001;
     border-bottom: 1px solid var(--border);
 }
 
@@ -998,39 +998,94 @@ body {
 }
 
 /* ========================================================= */
-/* РЕКОРДЫ — КАРТОЧКИ С КЛИКОМ */
+/* РЕКОРДЫ — КВАДРАТЫ */
 /* ========================================================= */
+.records {
+    padding: 100px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.records-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
 
 .record-card {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid var(--border);
-    padding: 35px 20px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 30px 20px 25px;
     text-align: center;
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
 }
 
 .record-card:hover {
     border-color: var(--gold);
-    transform: translateY(-6px);
+    transform: translateY(-4px);
     box-shadow: 0 0 40px rgba(255,215,0,0.05);
 }
 
+.record-icon {
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+.record-icon i {
+    font-size: 2rem;
+}
+
+.record-number {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 1px;
+    line-height: 1.1;
+}
+
+.record-card h3 {
+    color: var(--text-gray);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 6px 0;
+}
+
+.record-card p {
+    color: var(--text-dark);
+    font-size: 0.7rem;
+    margin-top: 4px;
+}
+
+.record-card p i {
+    margin-right: 4px;
+}
+
 .record-click-hint {
-    margin-top: 12px;
-    font-size: 0.55rem;
+    margin-top: 10px;
+    font-size: 0.5rem;
     color: var(--text-dark);
     opacity: 0;
     transition: opacity 0.3s ease;
     letter-spacing: 1px;
     text-transform: uppercase;
-}
-
-.record-click-hint i {
-    margin-right: 4px;
 }
 
 .record-card:hover .record-click-hint {
@@ -1055,7 +1110,6 @@ body {
 /* ========================================================= */
 /* МОДАЛЬНЫЕ ОКНА РЕКОРДОВ */
 /* ========================================================= */
-
 .record-modal {
     display: none;
     position: fixed;
@@ -1063,7 +1117,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2000;
+    z-index: 9999;
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -1087,13 +1141,13 @@ body {
     height: 100%;
     background: rgba(0,0,0,0.7);
     backdrop-filter: blur(8px);
-    z-index: 2001;
+    z-index: 9998;
     cursor: pointer;
 }
 
 .record-modal-content {
     position: relative;
-    z-index: 2002;
+    z-index: 10000;
     background: rgba(26,26,26,0.98);
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 16px;
@@ -1185,10 +1239,6 @@ body {
     line-height: 1.5;
 }
 
-/* ========================================================= */
-/* МЕСТО ДЛЯ КАРТИНКИ В МОДАЛЬНОМ ОКНЕ */
-/* ========================================================= */
-
 .record-modal-image-placeholder {
     background: rgba(255,255,255,0.02);
     border: 2px dashed rgba(255,255,255,0.06);
@@ -1228,43 +1278,48 @@ body {
 }
 
 /* ========================================================= */
-/* КОНТАКТЫ */
+/* КОНТАКТЫ — СТРОГИЙ СТИЛЬ */
 /* ========================================================= */
+
 .contact {
     padding: 100px 20px;
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 .contact-content {
     background: rgba(255,255,255,0.02);
-    border: 1px solid var(--border);
-    padding: 60px;
+    border: 1px solid rgba(255,255,255,0.04);
+    padding: 50px 40px;
     text-align: center;
     width: 100%;
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 .contact-content h2 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 500;
     letter-spacing: 4px;
     color: var(--text);
+    margin-bottom: 6px;
 }
 
 .contact-content h2 i {
     margin-right: 12px;
-    color: var(--gold);
+    color: var(--primary);
 }
 
 .contact-content > p {
     color: var(--text-dark);
-    font-size: 0.85rem;
-    margin-top: 10px;
+    font-size: 0.8rem;
+    margin-top: 6px;
+    letter-spacing: 1px;
 }
 
 .contact-content > p i {
@@ -1273,78 +1328,73 @@ body {
 
 .social-links {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 30px;
 }
 
 .social-link {
-    padding: 14px 32px;
-    border: 1px solid var(--border);
+    padding: 12px 28px;
+    border: 1px solid rgba(255,255,255,0.04);
     color: var(--text-gray);
     text-decoration: none;
-    font-size: 0.6rem;
+    font-size: 0.55rem;
     letter-spacing: 2px;
     text-transform: uppercase;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    border-radius: 4px;
+    gap: 10px;
+    border-radius: 2px;
+    font-weight: 400;
 }
 
 .social-link i {
-    font-size: 1.2rem;
-    width: 24px;
+    font-size: 1rem;
+    width: 20px;
 }
 
 .social-link.instagram:hover {
     background: radial-gradient(circle at 30% 30%, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
     border-color: #dc2743;
     color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(220,39,67,0.3);
+    transform: translateY(-2px);
 }
 
 .social-link.twitter:hover {
     background: #1DA1F2;
     border-color: #1DA1F2;
     color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(29,161,242,0.3);
+    transform: translateY(-2px);
 }
 
 .social-link.youtube:hover {
     background: #FF0000;
     border-color: #FF0000;
     color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(255,0,0,0.3);
+    transform: translateY(-2px);
 }
 
 .social-link.tiktok:hover {
     background: linear-gradient(135deg, #00f2ea, #ff0050);
     border-color: #ff0050;
     color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(255,0,80,0.3);
+    transform: translateY(-2px);
 }
 
 .social-link.facebook:hover {
     background: #1877F2;
     border-color: #1877F2;
     color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(24,119,242,0.3);
+    transform: translateY(-2px);
 }
 
 .social-link.telegram:hover {
     background: #0088cc;
     border-color: #0088cc;
     color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(0,136,204,0.3);
+    transform: translateY(-2px);
 }
 
 /* ========================================================= */
@@ -1354,10 +1404,12 @@ footer {
     background: rgba(13,13,13,0.95);
     border-top: 1px solid var(--border);
     padding: 50px 20px 25px;
+    position: relative;
+    z-index: 1;
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -1426,53 +1478,93 @@ footer {
 }
 
 /* ========================================================= */
-/* АДАПТИВ ДЛЯ МОДАЛЬНЫХ ОКОН */
+/* АДАПТИВ */
 /* ========================================================= */
 
+/* Рекорды */
 @media (max-width: 768px) {
-    .record-modal-content {
-        padding: 30px 20px;
-        max-width: 95%;
+    .records-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        max-width: 100%;
     }
     
-    .record-modal-content h2 {
-        font-size: 1.6rem;
+    .record-card {
+        min-height: 150px;
+        padding: 20px 15px;
     }
     
-    .record-modal-item {
-        flex-direction: column;
-        gap: 4px;
-        align-items: flex-start;
-    }
-    
-    .record-modal-value {
-        text-align: left;
-    }
-    
-    .record-modal-label {
-        min-width: auto;
+    .record-number {
+        font-size: 2.2rem;
     }
 }
 
 @media (max-width: 480px) {
-    .record-modal-content {
-        padding: 25px 16px;
+    .records-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
     }
     
-    .record-modal-icon {
-        width: 60px;
-        height: 60px;
+    .record-card {
+        min-height: 130px;
+        padding: 16px 12px;
+    }
+    
+    .record-number {
         font-size: 1.8rem;
     }
     
-    .record-modal-content h2 {
+    .record-card h3 {
+        font-size: 0.6rem;
+    }
+    
+    .record-icon {
         font-size: 1.3rem;
     }
 }
 
-/* ========================================================= */
-/* АДАПТИВ ОСТАЛЬНОЙ */
-/* ========================================================= */
+/* Контакты */
+@media (max-width: 768px) {
+    .contact-content {
+        padding: 35px 25px;
+    }
+    
+    .contact-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .social-link {
+        padding: 10px 20px;
+        font-size: 0.5rem;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-content {
+        padding: 25px 16px;
+    }
+    
+    .contact-content h2 {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .social-link {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 16px;
+        font-size: 0.45rem;
+    }
+}
+
+/* Остальной адаптив */
 @media (max-width: 1024px) {
     .team-page-content {
         grid-template-columns: 1fr;
@@ -1556,12 +1648,6 @@ footer {
     .team-page-car {
         max-width: 300px;
     }
-    .records-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .contact-content {
-        padding: 30px 20px;
-    }
     .hero-stats {
         gap: 30px;
     }
@@ -1601,9 +1687,6 @@ footer {
     .team-card-arrow {
         display: none;
     }
-    .records-grid {
-        grid-template-columns: 1fr;
-    }
     .hero-stats {
         flex-direction: column;
         gap: 15px;
@@ -1612,76 +1695,8 @@ footer {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    .social-links {
-        flex-direction: column;
-        align-items: center;
-    }
-    .social-link {
-        width: 100%;
-        justify-content: center;
-    }
     .team-page-driver {
         flex-direction: column;
         text-align: center;
     }
-}
-/* ========================================================= */
-/* ФИКС — МОДАЛЬНЫЕ ОКНА НЕ ПЕРЕКРЫВАЮТ КОНТАКТЫ */
-/* ========================================================= */
-
-/* Убеждаемся, что модальные окна имеют правильный z-index */
-.record-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.record-modal.active {
-    display: flex;
-    animation: modalFadeIn 0.3s ease;
-}
-
-.record-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(8px);
-    z-index: 9998;
-    cursor: pointer;
-}
-
-.record-modal-content {
-    position: relative;
-    z-index: 10000;
-    background: rgba(26,26,26,0.98);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 16px;
-    max-width: 600px;
-    width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    padding: 40px 35px;
-    box-shadow: 0 20px 80px rgba(0,0,0,0.5);
-}
-
-/* Контакты и подвал НЕ должны перекрываться модалками */
-.contact,
-footer {
-    position: relative;
-    z-index: 1;
-}
-
-/* Убедимся что навигация выше модалок */
-.navbar {
-    z-index: 10001;
 }
