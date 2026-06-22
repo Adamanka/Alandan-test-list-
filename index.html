@@ -28,6 +28,7 @@
         </div>
     </nav>
 
+    <!-- ГЛАВНЫЙ ЭКРАН -->
     <section class="hero" id="home">
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
             <div class="hero-badge">🏆 2024 СЕЗОН</div>
@@ -52,16 +53,17 @@
                 </div>
             </div>
             <div class="cta-buttons">
-                <button class="btn-primary" data-aos="zoom-in">
+                <a href="https://www.youtube.com/results?search_query=formula+1+2024" target="_blank" class="btn-primary" data-aos="zoom-in">
                     <i class="fas fa-play"></i> Смотреть видео
-                </button>
-                <button class="btn-secondary" data-aos="zoom-in" data-aos-delay="200">
+                </a>
+                <a href="#records" class="btn-secondary" data-aos="zoom-in" data-aos-delay="200">
                     <i class="fas fa-trophy"></i> Рекорды
-                </button>
+                </a>
             </div>
         </div>
     </section>
 
+    <!-- О ФОРМУЛЕ 1 -->
     <section class="about" id="about">
         <h2 data-aos="fade-right">О Формуле 1</h2>
         <div class="about-grid">
@@ -88,11 +90,12 @@
         </div>
     </section>
 
+    <!-- КОМАНДЫ -->
     <section class="teams" id="teams">
         <h2 data-aos="fade-right">Топ-команды</h2>
         <div class="team-grid">
-            <div class="team-card" data-aos="flip-left" data-aos-duration="1000">
-                <div class="team-icon">🔴</div>
+            <div class="team-card" data-aos="flip-left">
+                <img src="redbull.jpg.jpg" alt="Red Bull" class="team-logo">
                 <h3>Red Bull Racing</h3>
                 <p>Чемпионы 2023</p>
                 <div class="team-stats">
@@ -105,10 +108,10 @@
                 </div>
             </div>
             
-            <div class="team-card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200">
-                <div class="team-icon">🟣</div>
+            <div class="team-card" data-aos="flip-left" data-aos-delay="200">
+                <img src="Mercedes F1 car.jpg" alt="Mercedes" class="team-logo">
                 <h3>Mercedes-AMG</h3>
-                <p>8 титулов подряд (2014-2021)</p>
+                <p>8 титулов подряд</p>
                 <div class="team-stats">
                     <span>🏆 8 титулов</span>
                     <span>⚡ 120+ побед</span>
@@ -119,8 +122,8 @@
                 </div>
             </div>
             
-            <div class="team-card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="400">
-                <div class="team-icon">🔵</div>
+            <div class="team-card" data-aos="flip-left" data-aos-delay="400">
+                <img src="ferrari.jpg" alt="Ferrari" class="team-logo">
                 <h3>Ferrari</h3>
                 <p>Легенда F1</p>
                 <div class="team-stats">
@@ -133,8 +136,8 @@
                 </div>
             </div>
 
-            <div class="team-card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="600">
-                <div class="team-icon">🟡</div>
+            <div class="team-card" data-aos="flip-left" data-aos-delay="600">
+                <img src="mclaren.jpg" alt="McLaren" class="team-logo">
                 <h3>McLaren</h3>
                 <p>Возрождение легенды</p>
                 <div class="team-stats">
@@ -147,8 +150,8 @@
                 </div>
             </div>
 
-            <div class="team-card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="800">
-                <div class="team-icon">🟢</div>
+            <div class="team-card" data-aos="flip-left" data-aos-delay="800">
+                <img src="aston.jpg" alt="Aston Martin" class="team-logo">
                 <h3>Aston Martin</h3>
                 <p>Восходящая звезда</p>
                 <div class="team-stats">
@@ -161,7 +164,7 @@
                 </div>
             </div>
 
-            <div class="team-card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000">
+            <div class="team-card" data-aos="flip-left" data-aos-delay="1000">
                 <div class="team-icon">🟠</div>
                 <h3>Alpine</h3>
                 <p>Французская страсть</p>
@@ -177,13 +180,12 @@
         </div>
     </section>
 
+    <!-- ПИЛОТЫ -->
     <section class="drivers" id="drivers">
         <h2 data-aos="fade-left">Легендарные пилоты</h2>
         <div class="drivers-grid">
             <div class="driver-card" data-aos="zoom-in-up">
-                <div class="driver-image" style="background: linear-gradient(45deg, #ff0000, #cc0000);">
-                    <span class="driver-emoji">👑</span>
-                </div>
+                <img src="hamilton.jpg" alt="Lewis Hamilton" class="driver-photo">
                 <h3>Льюис Хэмилтон</h3>
                 <p>7-кратный чемпион</p>
                 <span class="driver-stat">103 победы</span>
@@ -194,9 +196,7 @@
             </div>
             
             <div class="driver-card" data-aos="zoom-in-up" data-aos-delay="200">
-                <div class="driver-image" style="background: linear-gradient(45deg, #1a1a2e, #16213e);">
-                    <span class="driver-emoji">🐐</span>
-                </div>
+                <img src="verstappen.jpg" alt="Max Verstappen" class="driver-photo">
                 <h3>Макс Ферстаппен</h3>
                 <p>Действующий чемпион</p>
                 <span class="driver-stat">54 победы</span>
@@ -207,9 +207,7 @@
             </div>
             
             <div class="driver-card" data-aos="zoom-in-up" data-aos-delay="400">
-                <div class="driver-image" style="background: linear-gradient(45deg, #ffd700, #ff6b00);">
-                    <span class="driver-emoji">🏁</span>
-                </div>
+                <img src="senna.jpg" alt="Ayrton Senna" class="driver-photo">
                 <h3>Айртон Сенна</h3>
                 <p>3-кратный чемпион</p>
                 <span class="driver-stat">41 победа</span>
@@ -220,9 +218,7 @@
             </div>
 
             <div class="driver-card" data-aos="zoom-in-up" data-aos-delay="600">
-                <div class="driver-image" style="background: linear-gradient(45deg, #ff0000, #8b0000);">
-                    <span class="driver-emoji">🏎️</span>
-                </div>
+                <img src="schumacher.jpg" alt="Michael Schumacher" class="driver-photo">
                 <h3>Михаэль Шумахер</h3>
                 <p>7-кратный чемпион</p>
                 <span class="driver-stat">91 победа</span>
@@ -233,9 +229,7 @@
             </div>
 
             <div class="driver-card" data-aos="zoom-in-up" data-aos-delay="800">
-                <div class="driver-image" style="background: linear-gradient(45deg, #0044ff, #00ccff);">
-                    <span class="driver-emoji">⭐</span>
-                </div>
+                <img src="vettel.jpg" alt="Sebastian Vettel" class="driver-photo">
                 <h3>Себастьян Феттель</h3>
                 <p>4-кратный чемпион</p>
                 <span class="driver-stat">53 победы</span>
@@ -246,9 +240,7 @@
             </div>
 
             <div class="driver-card" data-aos="zoom-in-up" data-aos-delay="1000">
-                <div class="driver-image" style="background: linear-gradient(45deg, #ff6b00, #ffcc00);">
-                    <span class="driver-emoji">🔥</span>
-                </div>
+                <img src="alonso.jpg" alt="Fernando Alonso" class="driver-photo">
                 <h3>Фернандо Алонсо</h3>
                 <p>2-кратный чемпион</p>
                 <span class="driver-stat">32 победы</span>
@@ -260,6 +252,7 @@
         </div>
     </section>
 
+    <!-- РЕКОРДЫ -->
     <section class="records" id="records">
         <h2 data-aos="fade-right">Рекорды F1</h2>
         <div class="records-grid">
@@ -290,6 +283,7 @@
         </div>
     </section>
 
+    <!-- ГАЛЕРЕЯ -->
     <section class="gallery" id="gallery">
         <h2 data-aos="fade-left">Галерея</h2>
         <div class="gallery-grid">
@@ -332,6 +326,7 @@
         </div>
     </section>
 
+    <!-- КОНТАКТЫ -->
     <section class="contact" id="contact">
         <div class="contact-content" data-aos="flip-up">
             <h2>Свяжись с нами</h2>
@@ -346,6 +341,7 @@
         </div>
     </section>
 
+    <!-- ПОДВАЛ -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
