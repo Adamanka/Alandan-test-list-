@@ -7,7 +7,7 @@ AOS.init({
 });
 
 // =========================================================
-// 3D ФОН
+// 3D ФОН — СВЕТЛЫЙ F1 СТИЛЬ
 // =========================================================
 const container = document.getElementById('three-canvas');
 
@@ -43,7 +43,7 @@ if (container) {
         const pos = new Float32Array(count * 3);
         for (let i = 0; i < count * 3; i++) pos[i] = (Math.random() - 0.5) * 120;
         geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-        const mat = new THREE.PointsMaterial({ size: 0.06, color: 0xff6b00, transparent: true, opacity: 0.12 });
+        const mat = new THREE.PointsMaterial({ size: 0.06, color: 0xff6b00, transparent: true, opacity: 0.15 });
         particlesMesh = new THREE.Points(geo, mat);
         scene.add(particlesMesh);
     }
@@ -61,7 +61,7 @@ if (container) {
             emissiveIntensity: 0.08,
             wireframe: true,
             transparent: true,
-            opacity: 0.1
+            opacity: 0.12
         });
         mainMesh = new THREE.Mesh(shape.geo, mat);
         mainMesh.userData = { speed: shape.speed };
@@ -130,7 +130,7 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
 });
 
 // =========================================================
-// ЗАКРЫТИЕ СТРАНИЦЫ КОМАНДЫ ПРИ НАЖАТИИ НА BACK
+// ЗАКРЫТИЕ СТРАНИЦЫ КОМАНДЫ
 // =========================================================
 document.querySelectorAll('.back-btn, .btn-secondary').forEach(link => {
     link.addEventListener('click', function(e) {
@@ -149,6 +149,5 @@ document.querySelectorAll('.back-btn, .btn-secondary').forEach(link => {
 });
 
 console.log('🏎️ Formula 1 — Рекламный сайт');
-console.log('🔄 3D фигуры меняются каждые 2 минуты');
-console.log('📱 Отдельные страницы команд на весь экран');
-console.log('✨ Анимации при нажатии на рекорды');
+console.log('🔥 Осталось 5 легендарных команд');
+console.log('✨ Фон в стилистике F1, светлее');
