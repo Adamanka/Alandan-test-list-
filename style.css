@@ -1,6 +1,3 @@
-/* ========================================================= */
-/* БАЗА */
-/* ========================================================= */
 * {
     margin: 0;
     padding: 0;
@@ -10,14 +7,10 @@
 
 :root {
     --primary: #cc0000;
-    --primary-dark: #990000;
     --dark: #0d0d0d;
-    --dark-card: rgba(255,255,255,0.02);
     --border: rgba(255,255,255,0.04);
     --text: #ffffff;
-    --text-light: #f0f0f0;
     --text-gray: #cccccc;
-    --text-muted: #aaaaaa;
     --text-dark: #777777;
     --gold: #ffd700;
     --font: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -32,7 +25,7 @@ body {
 }
 
 /* ========================================================= */
-/* 3D ФОН + ЧАСТИЦЫ */
+/* 3D ФОН */
 /* ========================================================= */
 #three-canvas {
     position: fixed;
@@ -41,7 +34,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: 0.2;
+    opacity: 0.15;
     background: radial-gradient(ellipse at center, #1a1a1a, #0a0a0a);
 }
 
@@ -63,20 +56,14 @@ body {
     background: var(--primary);
     border-radius: 50%;
     animation: floatParticle linear infinite;
-    opacity: 0.3;
+    opacity: 0.2;
 }
 
 @keyframes floatParticle {
-    0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0;
-    }
-    10% { opacity: 0.3; }
-    90% { opacity: 0.3; }
-    100% {
-        transform: translateY(-100vh) rotate(720deg);
-        opacity: 0;
-    }
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.2; }
+    90% { opacity: 0.2; }
+    100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
 }
 
 /* ========================================================= */
@@ -105,14 +92,7 @@ body {
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    letter-spacing: 1px;
     color: var(--text);
-    position: relative;
-}
-
-.logo i {
-    color: var(--primary);
-    margin-right: 8px;
 }
 
 .logo span {
@@ -131,14 +111,8 @@ body {
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-weight: 400;
     transition: color 0.3s ease;
     position: relative;
-}
-
-.nav-menu a i {
-    margin-right: 4px;
-    font-size: 0.6rem;
 }
 
 .nav-menu a::after {
@@ -186,10 +160,6 @@ body {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ========================================================= */
-/* ЛОГОТИП F1 — ТОЛЬКО СПРАВА СВЕРХУ (PNG БЕЗ ЗАДНИКА) */
-/* ========================================================= */
-
 .nav-logo {
     display: flex;
     align-items: center;
@@ -200,41 +170,17 @@ body {
     width: 38px;
     height: 38px;
     object-fit: contain;
-    transition: transform 0.3s ease;
     background: transparent;
+    transition: transform 0.3s ease;
 }
 
 .nav-f1-logo:hover {
     transform: scale(1.06);
 }
 
-/* Адаптив для логотипа */
-@media (max-width: 768px) {
-    .nav-f1-logo {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .nav-logo {
-        margin-left: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-f1-logo {
-        width: 26px;
-        height: 26px;
-    }
-    
-    .nav-logo {
-        margin-left: 8px;
-    }
-}
-
 /* ========================================================= */
-/* ГЛАВНЫЙ ЭКРАН — F1 В ЦЕНТРЕ, СЛЕВА СВЕРХУ, СНИЗУ НАДПИСЬ */
+/* ГЛАВНЫЙ ЭКРАН */
 /* ========================================================= */
-
 .hero {
     min-height: 100vh;
     display: flex;
@@ -252,7 +198,6 @@ body {
     z-index: 2;
 }
 
-/* F1 слева сверху */
 .hero-top-left {
     position: absolute;
     top: 30px;
@@ -265,40 +210,11 @@ body {
     font-weight: 700;
     color: var(--text);
     letter-spacing: 3px;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 .hero-f1-small span {
     color: var(--primary);
-}
-
-/* Большой логотип F1 в центре */
-.hero-logo-center {
-    margin-bottom: 10px;
-}
-
-.hero-f1-logo {
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-}
-
-/* Надпись ФОРМУЛА 1 снизу — строгий стиль */
-.hero-bottom-text {
-    margin-top: 20px;
-    margin-bottom: 30px;
-}
-
-.formula-1-text {
-    font-size: 1.4rem;
-    font-weight: 300;
-    letter-spacing: 12px;
-    color: var(--text-gray);
-    text-transform: uppercase;
-    opacity: 0.5;
-    display: inline-block;
 }
 
 .hero-badge {
@@ -311,12 +227,8 @@ body {
     letter-spacing: 3px;
     color: var(--primary);
     text-transform: uppercase;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     animation: pulseBadge 2s infinite;
-}
-
-.hero-badge i {
-    margin-right: 4px;
 }
 
 @keyframes pulseBadge {
@@ -337,13 +249,24 @@ body {
     50% { opacity: 0.3; transform: scale(0.7); }
 }
 
+.hero-logo-center {
+    margin-bottom: 10px;
+}
+
+.hero-f1-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
 .glitch-text {
     font-size: 5.5rem;
     font-weight: 700;
     letter-spacing: 6px;
     line-height: 1.05;
     color: var(--text);
-    position: relative;
 }
 
 .glitch-text span {
@@ -358,7 +281,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.8;
+    opacity: 0.4;
     pointer-events: none;
 }
 
@@ -391,23 +314,26 @@ body {
     margin: 20px 0;
 }
 
-.subtitle i {
-    color: var(--gold);
-    margin-right: 8px;
-}
-
 .description {
     font-size: 0.95rem;
     color: var(--text-dark);
     line-height: 1.9;
     max-width: 600px;
-    margin: 0 auto 35px;
+    margin: 0 auto 25px;
     font-weight: 300;
 }
 
-.description i {
-    color: var(--primary);
-    margin-right: 6px;
+.hero-bottom-text {
+    margin: 20px 0 30px;
+}
+
+.formula-1-text {
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 12px;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    opacity: 0.4;
 }
 
 .hero-stats {
@@ -426,13 +352,6 @@ body {
     font-size: 2.5rem;
     font-weight: 600;
     color: var(--primary);
-    transition: all 0.5s ease;
-}
-
-.stat-num i {
-    font-size: 1.8rem;
-    margin-right: 8px;
-    color: var(--gold);
 }
 
 .stat-label {
@@ -465,22 +384,15 @@ body {
     cursor: pointer;
 }
 
-.btn-primary i,
-.btn-outline i {
-    font-size: 0.8rem;
-}
-
 .btn-primary {
     background: var(--primary);
     color: var(--text);
-    box-shadow: 0 0 30px rgba(204,0,0,0.2);
 }
 
 .btn-primary:hover {
     background: var(--text);
     color: var(--dark);
     transform: translateY(-2px);
-    box-shadow: 0 0 50px rgba(204,0,0,0.3);
 }
 
 .btn-outline {
@@ -511,57 +423,9 @@ body {
     animation: bounceScroll 2s infinite;
 }
 
-.hero-scroll i {
-    font-size: 1.2rem;
-    color: var(--primary);
-}
-
 @keyframes bounceScroll {
     0%, 100% { transform: translateX(-50%) translateY(0); }
     50% { transform: translateX(-50%) translateY(-10px); }
-}
-
-/* Адаптив для главного экрана */
-@media (max-width: 768px) {
-    .hero-f1-logo {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .hero-top-left {
-        top: 15px;
-        left: 15px;
-    }
-    
-    .hero-f1-small {
-        font-size: 1.2rem;
-    }
-    
-    .formula-1-text {
-        font-size: 1rem;
-        letter-spacing: 8px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-f1-logo {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .hero-top-left {
-        top: 10px;
-        left: 10px;
-    }
-    
-    .hero-f1-small {
-        font-size: 1rem;
-    }
-    
-    .formula-1-text {
-        font-size: 0.8rem;
-        letter-spacing: 6px;
-    }
 }
 
 /* ========================================================= */
@@ -577,12 +441,8 @@ body {
     font-weight: 600;
     letter-spacing: 4px;
     color: var(--text);
-    position: relative;
     display: inline-block;
-}
-
-.section-header h2 i {
-    margin-right: 12px;
+    position: relative;
 }
 
 .section-header h2::after {
@@ -603,14 +463,9 @@ body {
     margin-top: 20px;
 }
 
-.section-sub i {
-    margin-right: 6px;
-}
-
 /* ========================================================= */
-/* КОМАНДЫ — СТИЛЬ КАК НА ПРИМЕРЕ */
+/* КОМАНДЫ */
 /* ========================================================= */
-
 .teams-grid-section {
     padding: 80px 20px 100px;
     max-width: 1100px;
@@ -649,26 +504,10 @@ body {
     justify-content: center;
 }
 
-.team-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.02), transparent 50%);
-    pointer-events: none;
-    border-radius: 12px;
-}
-
 .team-card:hover {
     transform: translateY(-6px);
     border-color: var(--team-color, var(--primary));
     box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-}
-
-.team-card:hover::before {
-    background: linear-gradient(135deg, rgba(255,255,255,0.04), transparent 50%);
 }
 
 .team-card-icon {
@@ -682,8 +521,6 @@ body {
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(255,255,255,0.06);
     transition: all 0.4s ease;
-    position: relative;
-    z-index: 1;
 }
 
 .team-card-icon i {
@@ -695,7 +532,6 @@ body {
 .team-card:hover .team-card-icon {
     background: rgba(255,255,255,0.06);
     border-color: var(--team-color, var(--primary));
-    transform: scale(1.05);
 }
 
 .team-card:hover .team-card-icon i {
@@ -707,32 +543,12 @@ body {
     font-weight: 500;
     letter-spacing: 1px;
     color: var(--text);
-    transition: color 0.3s ease;
-    position: relative;
-    z-index: 1;
     margin-bottom: 4px;
-}
-
-.team-card h3 i {
-    margin-right: 4px;
-    font-size: 0.8rem;
-}
-
-.team-card:hover h3 {
-    color: var(--team-color, var(--text));
 }
 
 .team-card p {
     color: var(--text-dark);
     font-size: 0.65rem;
-    letter-spacing: 0.5px;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 6px;
-}
-
-.team-card p i {
-    margin: 0 2px;
 }
 
 .team-card-stats {
@@ -742,8 +558,6 @@ body {
     margin-top: 6px;
     font-size: 0.6rem;
     color: var(--text-muted);
-    position: relative;
-    z-index: 1;
 }
 
 .team-card-stats span {
@@ -754,7 +568,6 @@ body {
 }
 
 .team-card-stats i {
-    margin-right: 4px;
     color: var(--gold);
 }
 
@@ -765,7 +578,6 @@ body {
     color: #222;
     font-size: 0.7rem;
     transition: all 0.4s ease;
-    z-index: 1;
 }
 
 .team-card:hover .team-card-arrow {
@@ -787,7 +599,6 @@ body {
     opacity: 0;
     transition: opacity 0.35s ease;
     border-radius: 12px;
-    z-index: 2;
 }
 
 .team-card-hover span {
@@ -795,11 +606,6 @@ body {
     font-size: 0.7rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    font-weight: 400;
-}
-
-.team-card-hover i {
-    margin-right: 6px;
 }
 
 .team-card:hover .team-card-hover {
@@ -816,7 +622,6 @@ body {
     opacity: 0;
     transition: opacity 0.5s ease;
     pointer-events: none;
-    border-radius: 12px;
 }
 
 .team-card:hover .team-card-glow {
@@ -824,358 +629,7 @@ body {
 }
 
 /* ========================================================= */
-/* СТРАНИЦЫ КОМАНД */
-/* ========================================================= */
-.team-page {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1001;
-    background: rgba(13,13,13,0.97);
-    backdrop-filter: blur(16px);
-    overflow-y: auto;
-    padding: 80px 20px 60px;
-}
-
-.team-page.active {
-    display: block;
-    animation: fadeInPage 0.5s ease;
-}
-
-@keyframes fadeInPage {
-    0% { opacity: 0; transform: scale(0.95) translateY(20px); }
-    100% { opacity: 1; transform: scale(1) translateY(0); }
-}
-
-.team-page-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-    background: rgba(0,0,0,0.5);
-}
-
-.team-page-overlay.active {
-    display: block;
-}
-
-.team-page-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--text-dark);
-    background: none;
-    border: none;
-    font-size: 0.65rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-    transition: color 0.3s ease;
-    cursor: pointer;
-    font-family: var(--font);
-}
-
-.back-btn i {
-    font-size: 0.8rem;
-}
-
-.back-btn:hover {
-    color: var(--text);
-}
-
-.team-page-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.team-page-left {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.car-container {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-}
-
-.team-page-car {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    animation: carFloat 3s ease-in-out infinite;
-    position: relative;
-    z-index: 2;
-}
-
-@keyframes carFloat {
-    0%, 100% { transform: translateY(0) rotate(-2deg); }
-    50% { transform: translateY(-12px) rotate(2deg); }
-}
-
-.car-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150%;
-    height: 150%;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.team-page-right h1 {
-    font-size: 3.5rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    color: var(--text);
-    margin: 10px 0;
-}
-
-.team-page-right h1 i {
-    margin-right: 12px;
-}
-
-.team-page-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 4px 16px;
-    font-size: 0.55rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--text);
-}
-
-.team-page-badge i {
-    font-size: 0.7rem;
-}
-
-.team-page-stats {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    color: var(--text-gray);
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    margin: 10px 0;
-}
-
-.team-page-stats i {
-    margin-right: 4px;
-}
-
-.team-page-desc {
-    color: var(--text-light);
-    font-size: 1rem;
-    line-height: 1.9;
-    max-width: 500px;
-    margin: 20px 0 30px;
-    font-weight: 300;
-}
-
-.team-page-desc i {
-    margin-right: 6px;
-    color: var(--primary);
-}
-
-.team-page-drivers {
-    margin: 25px 0 35px;
-}
-
-.team-page-drivers h3 {
-    font-size: 0.9rem;
-    font-weight: 400;
-    letter-spacing: 2px;
-    color: var(--text-gray);
-    text-transform: uppercase;
-    margin-bottom: 15px;
-}
-
-.team-page-drivers h3 i {
-    margin-right: 8px;
-}
-
-.team-page-driver {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--border);
-    transition: all 0.3s ease;
-}
-
-.team-page-driver:hover {
-    padding-left: 10px;
-    border-color: rgba(255,255,255,0.08);
-}
-
-.team-page-driver:last-child {
-    border-bottom: none;
-}
-
-.team-page-driver img {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid var(--border);
-}
-
-.team-page-driver .driver-info h4 {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--text);
-}
-
-.team-page-driver .driver-info h4 i {
-    margin-right: 8px;
-    color: var(--gold);
-    font-size: 0.9rem;
-}
-
-.team-page-driver .driver-info p {
-    font-size: 0.85rem;
-    color: var(--text-gray);
-}
-
-.team-page-driver .driver-stats {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    display: block;
-}
-
-.team-page-driver .driver-stats i {
-    margin-right: 4px;
-}
-
-.team-page-driver .driver-period {
-    font-size: 0.7rem;
-    color: #555;
-}
-
-.team-page-driver .driver-period i {
-    margin-right: 4px;
-}
-
-.team-records {
-    margin: 30px 0 35px;
-    padding: 20px 25px;
-    background: rgba(255,255,255,0.02);
-    border-left: 3px solid var(--primary);
-}
-
-.team-records h3 {
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: var(--text);
-    margin-bottom: 12px;
-}
-
-.team-records h3 i {
-    margin-right: 8px;
-}
-
-.records-list {
-    list-style: none;
-    padding: 0;
-}
-
-.records-list li {
-    color: var(--text-light);
-    font-size: 0.9rem;
-    line-height: 1.8;
-    padding: 4px 0;
-    border-bottom: 1px solid var(--border);
-}
-
-.records-list li:last-child {
-    border-bottom: none;
-}
-
-.records-list li i {
-    margin-right: 12px;
-    color: var(--primary);
-    width: 20px;
-    text-align: center;
-}
-
-.records-list li strong {
-    color: var(--primary);
-    font-weight: 600;
-}
-
-.team-page-actions {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 32px;
-    border: 1px solid var(--border);
-    color: var(--text-gray);
-    background: none;
-    text-decoration: none;
-    font-size: 0.6rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    font-family: var(--font);
-}
-
-.btn-secondary i {
-    font-size: 0.7rem;
-}
-
-.btn-secondary:hover {
-    border-color: var(--primary);
-    color: var(--text);
-}
-
-.btn-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--text-dark);
-    text-decoration: none;
-    font-size: 0.6rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
-}
-
-.btn-link i {
-    font-size: 0.7rem;
-}
-
-.btn-link:hover {
-    color: var(--primary);
-}
-
-/* ========================================================= */
-/* РЕКОРДЫ — КВАДРАТЫ */
+/* РЕКОРДЫ */
 /* ========================================================= */
 .records {
     padding: 100px 20px;
@@ -1201,21 +655,18 @@ body {
     padding: 30px 20px 25px;
     text-align: center;
     transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
     border-radius: 12px;
     cursor: pointer;
+    min-height: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 180px;
 }
 
 .record-card:hover {
     border-color: var(--gold);
     transform: translateY(-4px);
-    box-shadow: 0 0 40px rgba(255,215,0,0.05);
 }
 
 .record-icon {
@@ -1224,22 +675,16 @@ body {
     margin-bottom: 8px;
 }
 
-.record-icon i {
-    font-size: 2rem;
-}
-
 .record-number {
     font-size: 2.8rem;
     font-weight: 700;
     color: var(--primary);
-    letter-spacing: 1px;
     line-height: 1.1;
 }
 
 .record-card h3 {
     color: var(--text-gray);
     font-size: 0.75rem;
-    font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin: 6px 0;
@@ -1248,11 +693,6 @@ body {
 .record-card p {
     color: var(--text-dark);
     font-size: 0.7rem;
-    margin-top: 4px;
-}
-
-.record-card p i {
-    margin-right: 4px;
 }
 
 .record-click-hint {
@@ -1269,23 +709,8 @@ body {
     opacity: 1;
 }
 
-.record-hover-effect {
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,215,0,0.03), transparent 70%);
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.record-card:hover .record-hover-effect {
-    opacity: 1;
-}
-
 /* ========================================================= */
-/* МОДАЛЬНЫЕ ОКНА РЕКОРДОВ */
+/* МОДАЛЬНЫЕ ОКНА */
 /* ========================================================= */
 .record-modal {
     display: none;
@@ -1333,7 +758,6 @@ body {
     max-height: 90vh;
     overflow-y: auto;
     padding: 40px 35px;
-    box-shadow: 0 20px 80px rgba(0,0,0,0.5);
 }
 
 .record-modal-close {
@@ -1346,7 +770,6 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     transition: color 0.3s ease;
-    padding: 5px;
 }
 
 .record-modal-close:hover {
@@ -1363,7 +786,6 @@ body {
     margin: 0 auto 20px;
     font-size: 2.5rem;
     color: #fff;
-    box-shadow: 0 0 40px rgba(255,215,0,0.1);
 }
 
 .record-modal-content h2 {
@@ -1392,12 +814,10 @@ body {
 .record-modal-item {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     padding: 12px 16px;
     background: rgba(255,255,255,0.02);
     border-radius: 8px;
     border-left: 2px solid var(--primary);
-    gap: 15px;
 }
 
 .record-modal-label {
@@ -1413,7 +833,6 @@ body {
     font-size: 0.85rem;
     color: var(--text-light);
     text-align: right;
-    line-height: 1.5;
 }
 
 .record-modal-image-placeholder {
@@ -1422,7 +841,6 @@ body {
     border-radius: 12px;
     padding: 30px 20px;
     text-align: center;
-    transition: all 0.3s ease;
     margin-top: 10px;
 }
 
@@ -1436,7 +854,6 @@ body {
 .record-modal-image-placeholder p {
     color: var(--text-dark);
     font-size: 0.8rem;
-    margin-bottom: 6px;
 }
 
 .record-modal-image-placeholder .image-hint {
@@ -1446,16 +863,10 @@ body {
     border-radius: 20px;
     font-size: 0.65rem;
     color: var(--text-muted);
-    font-family: monospace;
-}
-
-.record-modal-image-placeholder:hover {
-    border-color: rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.03);
 }
 
 /* ========================================================= */
-/* КОНТАКТЫ — СТРОГИЙ СТИЛЬ */
+/* КОНТАКТЫ */
 /* ========================================================= */
 .contact {
     padding: 100px 20px;
@@ -1465,8 +876,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    z-index: 1;
 }
 
 .contact-content {
@@ -1483,23 +892,12 @@ body {
     font-weight: 500;
     letter-spacing: 4px;
     color: var(--text);
-    margin-bottom: 6px;
-}
-
-.contact-content h2 i {
-    margin-right: 12px;
-    color: var(--primary);
 }
 
 .contact-content > p {
     color: var(--text-dark);
     font-size: 0.8rem;
     margin-top: 6px;
-    letter-spacing: 1px;
-}
-
-.contact-content > p i {
-    margin-right: 6px;
 }
 
 .social-links {
@@ -1522,8 +920,6 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    border-radius: 2px;
-    font-weight: 400;
 }
 
 .social-link i {
@@ -1537,35 +933,30 @@ body {
     color: #fff;
     transform: translateY(-2px);
 }
-
 .social-link.twitter:hover {
     background: #1DA1F2;
     border-color: #1DA1F2;
     color: #fff;
     transform: translateY(-2px);
 }
-
 .social-link.youtube:hover {
     background: #FF0000;
     border-color: #FF0000;
     color: #fff;
     transform: translateY(-2px);
 }
-
 .social-link.tiktok:hover {
     background: linear-gradient(135deg, #00f2ea, #ff0050);
     border-color: #ff0050;
     color: #fff;
     transform: translateY(-2px);
 }
-
 .social-link.facebook:hover {
     background: #1877F2;
     border-color: #1877F2;
     color: #fff;
     transform: translateY(-2px);
 }
-
 .social-link.telegram:hover {
     background: #0088cc;
     border-color: #0088cc;
@@ -1580,8 +971,6 @@ footer {
     background: rgba(13,13,13,0.95);
     border-top: 1px solid var(--border);
     padding: 50px 20px 25px;
-    position: relative;
-    z-index: 1;
 }
 
 .footer-content {
@@ -1603,11 +992,6 @@ footer {
     margin-bottom: 15px;
 }
 
-.footer-section h4 i {
-    margin-right: 8px;
-    color: var(--primary);
-}
-
 .footer-section h4 span {
     color: var(--primary);
 }
@@ -1618,10 +1002,6 @@ footer {
     line-height: 1.8;
 }
 
-.footer-section p i {
-    margin-right: 6px;
-}
-
 .footer-section a {
     display: block;
     color: var(--text-dark);
@@ -1629,12 +1009,6 @@ footer {
     font-size: 0.7rem;
     margin: 6px 0;
     transition: color 0.3s ease;
-}
-
-.footer-section a i {
-    margin-right: 6px;
-    width: 16px;
-    text-align: center;
 }
 
 .footer-section a:hover {
@@ -1649,206 +1023,9 @@ footer {
     letter-spacing: 1px;
 }
 
-.footer-bottom i {
-    margin-right: 4px;
-}
-
 /* ========================================================= */
 /* АДАПТИВ */
 /* ========================================================= */
-
-/* Команды */
-@media (max-width: 768px) {
-    .teams-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 14px;
-    }
-    
-    .team-card {
-        padding: 20px 12px 16px;
-        min-height: 130px;
-    }
-    
-    .team-card-icon {
-        width: 44px;
-        height: 44px;
-    }
-    
-    .team-card-icon i {
-        font-size: 1.2rem;
-    }
-    
-    .team-card h3 {
-        font-size: 0.8rem;
-    }
-    
-    .team-card p {
-        font-size: 0.55rem;
-    }
-    
-    .team-card-stats {
-        font-size: 0.5rem;
-        gap: 10px;
-    }
-    
-    .team-card-stats span {
-        padding: 1px 8px;
-    }
-    
-    .team-card-arrow {
-        display: none;
-    }
-}
-
-@media (max-width: 480px) {
-    .teams-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-    
-    .team-card {
-        padding: 16px 10px 14px;
-        min-height: 110px;
-        border-radius: 8px;
-    }
-    
-    .team-card-icon {
-        width: 36px;
-        height: 36px;
-        margin-bottom: 8px;
-    }
-    
-    .team-card-icon i {
-        font-size: 1rem;
-    }
-    
-    .team-card h3 {
-        font-size: 0.7rem;
-        letter-spacing: 0.5px;
-    }
-    
-    .team-card p {
-        font-size: 0.5rem;
-    }
-    
-    .team-card-stats {
-        font-size: 0.45rem;
-        gap: 6px;
-        flex-wrap: wrap;
-    }
-    
-    .team-card-stats span {
-        padding: 1px 6px;
-    }
-}
-
-/* Рекорды */
-@media (max-width: 768px) {
-    .records-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-        max-width: 100%;
-    }
-    
-    .record-card {
-        min-height: 150px;
-        padding: 20px 15px;
-    }
-    
-    .record-number {
-        font-size: 2.2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .records-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-    }
-    
-    .record-card {
-        min-height: 130px;
-        padding: 16px 12px;
-    }
-    
-    .record-number {
-        font-size: 1.8rem;
-    }
-    
-    .record-card h3 {
-        font-size: 0.6rem;
-    }
-    
-    .record-icon {
-        font-size: 1.3rem;
-    }
-}
-
-/* Контакты */
-@media (max-width: 768px) {
-    .contact-content {
-        padding: 35px 25px;
-    }
-    
-    .contact-content h2 {
-        font-size: 1.5rem;
-    }
-    
-    .social-link {
-        padding: 10px 20px;
-        font-size: 0.5rem;
-        gap: 8px;
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-content {
-        padding: 25px 16px;
-    }
-    
-    .contact-content h2 {
-        font-size: 1.2rem;
-        letter-spacing: 2px;
-    }
-    
-    .social-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-    }
-    
-    .social-link {
-        width: 100%;
-        justify-content: center;
-        padding: 10px 16px;
-        font-size: 0.45rem;
-    }
-}
-
-/* Остальной адаптив */
-@media (max-width: 1024px) {
-    .team-page-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    .team-page-desc {
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .team-page-stats {
-        justify-content: center;
-    }
-    .team-page-driver {
-        justify-content: center;
-        flex-direction: column;
-        text-align: center;
-    }
-    .team-page-actions {
-        justify-content: center;
-    }
-}
-
 @media (max-width: 768px) {
     .glitch-text {
         font-size: 3rem;
@@ -1880,14 +1057,23 @@ footer {
     .nav-toggle {
         display: flex;
     }
-    .section-header h2 {
-        font-size: 1.8rem;
+    .teams-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
     }
-    .team-page-right h1 {
-        font-size: 2.5rem;
+    .team-card {
+        padding: 20px 12px 16px;
+        min-height: 130px;
     }
-    .team-page-car {
-        max-width: 300px;
+    .team-card-icon {
+        width: 44px;
+        height: 44px;
+    }
+    .team-card-icon i {
+        font-size: 1.2rem;
+    }
+    .records-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     .hero-stats {
         gap: 30px;
@@ -1895,22 +1081,64 @@ footer {
     .stat-num {
         font-size: 1.8rem;
     }
+    .hero-f1-logo {
+        width: 80px;
+        height: 80px;
+    }
+    .formula-1-text {
+        font-size: 1rem;
+        letter-spacing: 8px;
+    }
 }
 
 @media (max-width: 480px) {
     .glitch-text {
         font-size: 2rem;
     }
+    .teams-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+    .team-card {
+        padding: 16px 10px 14px;
+        min-height: 110px;
+        border-radius: 8px;
+    }
+    .team-card-icon {
+        width: 36px;
+        height: 36px;
+    }
+    .team-card-icon i {
+        font-size: 1rem;
+    }
+    .records-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .record-card {
+        min-height: 130px;
+        padding: 16px 12px;
+    }
+    .record-number {
+        font-size: 1.8rem;
+    }
     .hero-stats {
         flex-direction: column;
         gap: 15px;
     }
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    .team-page-driver {
+    .social-links {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
+    }
+    .social-link {
+        width: 100%;
+        justify-content: center;
+    }
+    .hero-f1-logo {
+        width: 60px;
+        height: 60px;
+    }
+    .formula-1-text {
+        font-size: 0.8rem;
+        letter-spacing: 6px;
     }
 }
