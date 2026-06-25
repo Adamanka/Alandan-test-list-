@@ -1,263 +1,297 @@
-AOS.init({
-    duration: 800,
-    once: false,
-    offset: 100,
-    mirror: true,
-    easing: 'ease-out'
-});
+/* ========================================================= */
+/* СТРАНИЦЫ КОМАНД — ОТКРЫВАЮТСЯ ПО КЛИКУ */
+/* ========================================================= */
 
-function animateCounters() {
-    document.querySelectorAll('.hero-stat').forEach(function(stat) {
-        var target = parseInt(stat.getAttribute('data-count'));
-        var numberEl = stat.querySelector('.stat-num');
-        if (!numberEl) return;
-        var current = 0;
-        var increment = Math.ceil(target / 60);
-        
-        var timer = setInterval(function() {
-            current += increment;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
-            if (target >= 1000) {
-                numberEl.textContent = current + '+';
-            } else {
-                numberEl.textContent = current;
-            }
-        }, 30);
-    });
+.team-page {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    background: rgba(13,13,13,0.97);
+    backdrop-filter: blur(16px);
+    overflow-y: auto;
+    padding: 80px 20px 60px;
 }
 
-window.addEventListener('load', function() {
-    setTimeout(animateCounters, 500);
-});
-
-document.addEventListener('click', function(e) {
-    var wrapper = e.target.closest('.team-card-wrapper');
-    if (wrapper) {
-        var team = wrapper.getAttribute('data-team');
-        if (team) {
-            openTeam(team);
-        }
-    }
-});
-
-function openTeam(teamName) {
-    document.querySelectorAll('.team-page').forEach(function(el) {
-        el.classList.remove('active');
-    });
-    document.querySelectorAll('.team-page-overlay').forEach(function(el) {
-        el.classList.remove('active');
-    });
-    
-    var page = document.getElementById('team-' + teamName);
-    var overlay = document.getElementById('team-' + teamName + '-overlay');
-    
-    if (page) {
-        page.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        page.scrollTop = 0;
-    }
-    if (overlay) {
-        overlay.classList.add('active');
-    }
+.team-page.active {
+    display: block;
+    animation: fadeInPage 0.5s ease;
 }
 
-function closeTeam(teamName) {
-    var page = document.getElementById('team-' + teamName);
-    var overlay = document.getElementById('team-' + teamName + '-overlay');
-    
-    if (page) page.classList.remove('active');
-    if (overlay) overlay.classList.remove('active');
-    document.body.style.overflow = '';
+@keyframes fadeInPage {
+    0% { opacity: 0; transform: scale(0.95) translateY(20px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-function openRecord(recordId) {
-    var modal = document.getElementById(recordId + '-modal');
-    if (modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
+.team-page-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: rgba(0,0,0,0.5);
 }
 
-function closeRecord(recordId) {
-    var modal = document.getElementById(recordId + '-modal');
-    if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
+.team-page-overlay.active {
+    display: block;
 }
 
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        document.querySelectorAll('.record-modal.active').forEach(function(el) {
-            el.classList.remove('active');
-        });
-        document.querySelectorAll('.team-page.active').forEach(function(el) {
-            el.classList.remove('active');
-        });
-        document.querySelectorAll('.team-page-overlay.active').forEach(function(el) {
-            el.classList.remove('active');
-        });
-        document.body.style.overflow = '';
-    }
-});
-
-var navToggle = document.getElementById('navToggle');
-var navMenu = document.getElementById('navMenu');
-
-if (navToggle && navMenu) {
-    navToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
-    });
+.team-page-inner {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-document.querySelectorAll('.nav-menu a').forEach(function(link) {
-    link.addEventListener('click', function() {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-    });
-});
-
-document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-        var targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        var target = document.querySelector(targetId);
-        if (target) {
-            e.preventDefault();
-            document.querySelectorAll('.team-page').forEach(function(el) {
-                el.classList.remove('active');
-            });
-            document.querySelectorAll('.team-page-overlay').forEach(function(el) {
-                el.classList.remove('active');
-            });
-            document.body.style.overflow = '';
-            
-            setTimeout(function() {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 300);
-        }
-    });
-});
-
-function createParticles() {
-    var container = document.getElementById('particles-container');
-    if (!container) return;
-    
-    for (var i = 0; i < 30; i++) {
-        var particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.width = (Math.random() * 3 + 2) + 'px';
-        particle.style.height = particle.style.width;
-        particle.style.animationDuration = (Math.random() * 15 + 10) + 's';
-        particle.style.animationDelay = (Math.random() * 20) + 's';
-        particle.style.opacity = Math.random() * 0.3 + 0.1;
-        container.appendChild(particle);
-    }
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-dark);
+    background: none;
+    border: none;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    font-family: var(--font);
 }
 
-createParticles();
-
-var container = document.getElementById('three-canvas');
-
-if (container) {
-    var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    container.appendChild(renderer.domElement);
-
-    var shapes = [
-        { geo: new THREE.TorusKnotGeometry(2, 0.8, 100, 16), color: 0xcc0000, emissive: 0xff0000, speed: { x: 0.005, y: 0.01 } },
-        { geo: new THREE.SphereGeometry(1.8, 32, 32), color: 0xffd700, emissive: 0xff6b00, speed: { x: 0.01, y: 0.005 } },
-        { geo: new THREE.BoxGeometry(2.5, 2.5, 2.5), color: 0x0066ff, emissive: 0x0044cc, speed: { x: 0.008, y: 0.008 } },
-        { geo: new THREE.IcosahedronGeometry(2, 1), color: 0x00cc00, emissive: 0x008800, speed: { x: 0.007, y: 0.009 } },
-        { geo: new THREE.TorusGeometry(1.8, 0.6, 16, 100), color: 0x9900ff, emissive: 0x6600cc, speed: { x: 0.01, y: 0.01 } },
-        { geo: new THREE.ConeGeometry(1.8, 3, 32), color: 0xff6b00, emissive: 0xcc4400, speed: { x: 0.006, y: 0.012 } },
-        { geo: new THREE.DodecahedronGeometry(2), color: 0xff0066, emissive: 0xcc0044, speed: { x: 0.009, y: 0.007 } },
-        { geo: new THREE.OctahedronGeometry(2.2), color: 0x00ccff, emissive: 0x0088cc, speed: { x: 0.008, y: 0.006 } },
-        { geo: new THREE.TorusKnotGeometry(2, 0.4, 64, 8, 2, 3), color: 0xffffff, emissive: 0x888888, speed: { x: 0.01, y: 0.01 } },
-        { geo: new THREE.TorusKnotGeometry(2, 0.6, 100, 16, 3, 4), color: 0xffff00, emissive: 0xccaa00, speed: { x: 0.007, y: 0.013 } }
-    ];
-
-    var currentIndex = 0;
-    var mainMesh = null;
-    var particlesMesh = null;
-
-    function createParticles3D() {
-        var geo = new THREE.BufferGeometry();
-        var count = 2000;
-        var pos = new Float32Array(count * 3);
-        for (var i = 0; i < count * 3; i++) pos[i] = (Math.random() - 0.5) * 120;
-        geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-        var mat = new THREE.PointsMaterial({ size: 0.06, color: 0xff6b00, transparent: true, opacity: 0.12 });
-        particlesMesh = new THREE.Points(geo, mat);
-        scene.add(particlesMesh);
-    }
-
-    function createShape(index) {
-        if (mainMesh) {
-            scene.remove(mainMesh);
-            mainMesh.geometry.dispose();
-            mainMesh.material.dispose();
-        }
-        var shape = shapes[index];
-        var mat = new THREE.MeshPhongMaterial({
-            color: shape.color,
-            emissive: shape.emissive,
-            emissiveIntensity: 0.08,
-            wireframe: true,
-            transparent: true,
-            opacity: 0.1
-        });
-        mainMesh = new THREE.Mesh(shape.geo, mat);
-        mainMesh.userData = { speed: shape.speed };
-        scene.add(mainMesh);
-    }
-
-    function changeShape() {
-        currentIndex = (currentIndex + 1) % shapes.length;
-        createShape(currentIndex);
-    }
-
-    scene.add(new THREE.AmbientLight(0xffffff, 0.6));
-    var l1 = new THREE.PointLight(0xff0000, 0.8);
-    l1.position.set(10, 10, 10);
-    scene.add(l1);
-    var l2 = new THREE.PointLight(0x0066ff, 0.4);
-    l2.position.set(-10, -10, -10);
-    scene.add(l2);
-
-    camera.position.z = 5.5;
-
-    createParticles3D();
-    createShape(0);
-    setInterval(changeShape, 120000);
-
-    function animate() {
-        requestAnimationFrame(animate);
-        if (mainMesh) {
-            var s = mainMesh.userData.speed || { x: 0.005, y: 0.01 };
-            mainMesh.rotation.x += s.x;
-            mainMesh.rotation.y += s.y;
-        }
-        if (particlesMesh) particlesMesh.rotation.y += 0.0003;
-        renderer.render(scene, camera);
-    }
-    animate();
-
-    window.addEventListener('resize', function() {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-    });
+.back-btn:hover {
+    color: var(--text);
 }
 
-console.log('🏎️ Formula 1 — Все функции работают!');
+.team-page-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.team-page-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.car-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+.team-page-car {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    animation: carFloat 3s ease-in-out infinite;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes carFloat {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-12px) rotate(2deg); }
+}
+
+.car-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 150%;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.team-page-right h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--text);
+    margin: 10px 0;
+}
+
+.team-page-badge {
+    display: inline-block;
+    padding: 4px 16px;
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text);
+}
+
+.team-page-stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin: 10px 0;
+}
+
+.team-page-desc {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.9;
+    max-width: 500px;
+    margin: 20px 0 30px;
+    font-weight: 300;
+}
+
+.team-page-drivers {
+    margin: 25px 0 35px;
+}
+
+.team-page-drivers h3 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.team-page-driver {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    transition: all 0.3s ease;
+}
+
+.team-page-driver:hover {
+    padding-left: 10px;
+}
+
+.team-page-driver:last-child {
+    border-bottom: none;
+}
+
+.team-page-driver img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,0.04);
+}
+
+.team-page-driver .driver-info h4 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.team-page-driver .driver-info p {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+
+.team-page-driver .driver-stats {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    display: block;
+}
+
+.team-page-driver .driver-period {
+    font-size: 0.7rem;
+    color: #555;
+}
+
+.team-records {
+    margin: 30px 0 35px;
+    padding: 20px 25px;
+    background: rgba(255,255,255,0.02);
+    border-left: 3px solid var(--primary);
+}
+
+.team-records h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.records-list {
+    list-style: none;
+    padding: 0;
+}
+
+.records-list li {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.8;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.records-list li:last-child {
+    border-bottom: none;
+}
+
+.records-list li i {
+    margin-right: 12px;
+    color: var(--primary);
+    width: 20px;
+    text-align: center;
+}
+
+.records-list li strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.team-page-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 32px;
+    border: 1px solid rgba(255,255,255,0.04);
+    color: var(--text-gray);
+    background: none;
+    text-decoration: none;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-family: var(--font);
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--text);
+}
+
+.btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+    color: var(--primary);
+}
