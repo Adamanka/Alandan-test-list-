@@ -171,6 +171,249 @@
 </section>
 
 <!-- ========================================================= -->
+<!-- СТРАНИЦЫ КОМАНД (СКРЫТЫ, ОТКРЫВАЮТСЯ ПО КЛИКУ) -->
+<!-- ========================================================= -->
+
+<!-- FERRARI -->
+<div class="team-page-overlay" id="team-ferrari-overlay"></div>
+<div class="team-page" id="team-ferrari">
+    <div class="team-page-inner">
+        <button class="back-btn" onclick="closeTeam('ferrari')"><i class="fas fa-arrow-left"></i> Назад</button>
+        <div class="team-page-content">
+            <div class="team-page-left">
+                <div class="car-container">
+                    <img src="ferrari.jpg" alt="Ferrari" class="team-page-car" onerror="this.style.display='none'">
+                    <div class="car-glow" style="background: radial-gradient(circle, rgba(255,0,0,0.15), transparent 70%);"></div>
+                </div>
+            </div>
+            <div class="team-page-right">
+                <div class="team-page-badge" style="background: #ff0000;">Scuderia Ferrari</div>
+                <h1><i class="fas fa-horse-head" style="color: #ff0000;"></i> Ferrari</h1>
+                <p class="team-page-stats"><span><i class="fas fa-trophy"></i> 16 титулов</span><span><i class="fas fa-flag"></i> 240+ побед</span><span><i class="fas fa-map-marker-alt"></i> Италия</span></p>
+                <p class="team-page-desc">Легендарная команда Формулы 1. Основана в 1929 году Энцо Феррари. Самая титулованная команда в истории Формулы 1.</p>
+                <div class="team-page-drivers">
+                    <h3><i class="fas fa-users"></i> Легендарные пилоты</h3>
+                    <div class="team-page-driver">
+                        <img src="schumacher.jpg" alt="Schumacher" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2255%22 height=%2255%22%3E%3Crect width=%2255%22 height=%2255%22 fill=%22%23333%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23fff%22 font-size=%2220%22%3E🏎️%3C/text%3E%3C/svg%3E'">
+                        <div class="driver-info">
+                            <h4><i class="fas fa-crown"></i> Михаэль Шумахер</h4>
+                            <p>7-кратный чемпион мира</p>
+                            <span class="driver-stats"><i class="fas fa-flag"></i> 91 победа • <i class="fas fa-flag-checkered"></i> 68 поул-позиций</span>
+                            <span class="driver-period"><i class="fas fa-map-marker-alt"></i> Германия 1991-2006</span>
+                        </div>
+                    </div>
+                    <div class="team-page-driver">
+                        <img src="vettel.jpg" alt="Vettel" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2255%22 height=%2255%22%3E%3Crect width=%2255%22 height=%2255%22 fill=%22%23333%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23fff%22 font-size=%2220%22%3E🏎️%3C/text%3E%3C/svg%3E'">
+                        <div class="driver-info">
+                            <h4><i class="fas fa-crown"></i> Себастьян Феттель</h4>
+                            <p>4-кратный чемпион мира</p>
+                            <span class="driver-stats"><i class="fas fa-flag"></i> 53 победы • <i class="fas fa-flag-checkered"></i> 57 поул-позиций</span>
+                            <span class="driver-period"><i class="fas fa-map-marker-alt"></i> Германия 2015-2020</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-records">
+                    <h3><i class="fas fa-trophy"></i> Рекорды Ferrari</h3>
+                    <ul class="records-list">
+                        <li><i class="fas fa-trophy"></i> <strong>16</strong> титулов чемпиона мира среди конструкторов</li>
+                        <li><i class="fas fa-crown"></i> <strong>15</strong> титулов чемпиона мира среди пилотов</li>
+                        <li><i class="fas fa-flag"></i> <strong>240+</strong> побед в Гран-при</li>
+                    </ul>
+                </div>
+                <div class="team-page-actions">
+                    <button class="btn-secondary" onclick="closeTeam('ferrari')"><i class="fas fa-arrow-left"></i> Все команды</button>
+                    <a href="#records" class="btn-link"><i class="fas fa-trophy"></i> Рекорды →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MERCEDES -->
+<div class="team-page-overlay" id="team-mercedes-overlay"></div>
+<div class="team-page" id="team-mercedes">
+    <div class="team-page-inner">
+        <button class="back-btn" onclick="closeTeam('mercedes')"><i class="fas fa-arrow-left"></i> Назад</button>
+        <div class="team-page-content">
+            <div class="team-page-left">
+                <div class="car-container">
+                    <img src="Mercedes%20F1%20car.jpg" alt="Mercedes" class="team-page-car" onerror="this.style.display='none'">
+                    <div class="car-glow" style="background: radial-gradient(circle, rgba(192,192,192,0.1), transparent 70%);"></div>
+                </div>
+            </div>
+            <div class="team-page-right">
+                <div class="team-page-badge" style="background: #c0c0c0; color: #000;">Mercedes-AMG</div>
+                <h1><i class="fas fa-star" style="color: #c0c0c0;"></i> Mercedes</h1>
+                <p class="team-page-stats"><span><i class="fas fa-trophy"></i> 8 титулов</span><span><i class="fas fa-flag"></i> 120+ побед</span><span><i class="fas fa-map-marker-alt"></i> Германия</span></p>
+                <p class="team-page-desc">Доминировали в эру гибридных двигателей. 8 титулов подряд — рекорд Формулы 1.</p>
+                <div class="team-page-drivers">
+                    <h3><i class="fas fa-users"></i> Легендарные пилоты</h3>
+                    <div class="team-page-driver">
+                        <img src="hamilton.jpg" alt="Hamilton" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2255%22 height=%2255%22%3E%3Crect width=%2255%22 height=%2255%22 fill=%22%23333%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23fff%22 font-size=%2220%22%3E🏎️%3C/text%3E%3C/svg%3E'">
+                        <div class="driver-info">
+                            <h4><i class="fas fa-crown"></i> Льюис Хэмилтон</h4>
+                            <p>7-кратный чемпион мира</p>
+                            <span class="driver-stats"><i class="fas fa-flag"></i> 103 победы • <i class="fas fa-flag-checkered"></i> 104 поул-позиции</span>
+                            <span class="driver-period"><i class="fas fa-map-marker-alt"></i> Великобритания 2013-2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-records">
+                    <h3><i class="fas fa-trophy"></i> Рекорды Mercedes</h3>
+                    <ul class="records-list">
+                        <li><i class="fas fa-trophy"></i> <strong>8</strong> титулов чемпиона мира среди конструкторов подряд</li>
+                        <li><i class="fas fa-crown"></i> <strong>7</strong> титулов чемпиона мира среди пилотов</li>
+                        <li><i class="fas fa-flag"></i> <strong>120+</strong> побед в Гран-при</li>
+                    </ul>
+                </div>
+                <div class="team-page-actions">
+                    <button class="btn-secondary" onclick="closeTeam('mercedes')"><i class="fas fa-arrow-left"></i> Все команды</button>
+                    <a href="#records" class="btn-link"><i class="fas fa-trophy"></i> Рекорды →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- RED BULL -->
+<div class="team-page-overlay" id="team-redbull-overlay"></div>
+<div class="team-page" id="team-redbull">
+    <div class="team-page-inner">
+        <button class="back-btn" onclick="closeTeam('redbull')"><i class="fas fa-arrow-left"></i> Назад</button>
+        <div class="team-page-content">
+            <div class="team-page-left">
+                <div class="car-container">
+                    <img src="redbull.jpg.jpg" alt="Red Bull" class="team-page-car" onerror="this.style.display='none'">
+                    <div class="car-glow" style="background: radial-gradient(circle, rgba(26,26,46,0.15), transparent 70%);"></div>
+                </div>
+            </div>
+            <div class="team-page-right">
+                <div class="team-page-badge" style="background: #1a1a2e;">Red Bull Racing</div>
+                <h1><i class="fas fa-bull" style="color: #1a1a2e;"></i> Red Bull</h1>
+                <p class="team-page-stats"><span><i class="fas fa-trophy"></i> 6 титулов</span><span><i class="fas fa-flag"></i> 100+ побед</span><span><i class="fas fa-map-marker-alt"></i> Австрия</span></p>
+                <p class="team-page-desc">Современная сила Формулы 1. Действующие чемпионы.</p>
+                <div class="team-page-drivers">
+                    <h3><i class="fas fa-users"></i> Легендарные пилоты</h3>
+                    <div class="team-page-driver">
+                        <img src="verstappen.jpg" alt="Verstappen" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2255%22 height=%2255%22%3E%3Crect width=%2255%22 height=%2255%22 fill=%22%23333%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23fff%22 font-size=%2220%22%3E🏎️%3C/text%3E%3C/svg%3E'">
+                        <div class="driver-info">
+                            <h4><i class="fas fa-crown"></i> Макс Ферстаппен</h4>
+                            <p>Действующий чемпион</p>
+                            <span class="driver-stats"><i class="fas fa-flag"></i> 54 победы • <i class="fas fa-flag-checkered"></i> 38 поул-позиций</span>
+                            <span class="driver-period"><i class="fas fa-map-marker-alt"></i> Нидерланды 2016-2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-records">
+                    <h3><i class="fas fa-trophy"></i> Рекорды Red Bull</h3>
+                    <ul class="records-list">
+                        <li><i class="fas fa-trophy"></i> <strong>6</strong> титулов чемпиона мира среди конструкторов</li>
+                        <li><i class="fas fa-crown"></i> <strong>6</strong> титулов чемпиона мира среди пилотов</li>
+                        <li><i class="fas fa-flag"></i> <strong>100+</strong> побед в Гран-при</li>
+                    </ul>
+                </div>
+                <div class="team-page-actions">
+                    <button class="btn-secondary" onclick="closeTeam('redbull')"><i class="fas fa-arrow-left"></i> Все команды</button>
+                    <a href="#records" class="btn-link"><i class="fas fa-trophy"></i> Рекорды →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MCLAREN -->
+<div class="team-page-overlay" id="team-mclaren-overlay"></div>
+<div class="team-page" id="team-mclaren">
+    <div class="team-page-inner">
+        <button class="back-btn" onclick="closeTeam('mclaren')"><i class="fas fa-arrow-left"></i> Назад</button>
+        <div class="team-page-content">
+            <div class="team-page-left">
+                <div class="car-container">
+                    <img src="mclaren.jpg" alt="McLaren" class="team-page-car" onerror="this.style.display='none'">
+                    <div class="car-glow" style="background: radial-gradient(circle, rgba(255,107,0,0.12), transparent 70%);"></div>
+                </div>
+            </div>
+            <div class="team-page-right">
+                <div class="team-page-badge" style="background: #ff6b00;">McLaren F1</div>
+                <h1><i class="fas fa-rocket" style="color: #ff6b00;"></i> McLaren</h1>
+                <p class="team-page-stats"><span><i class="fas fa-trophy"></i> 8 титулов</span><span><i class="fas fa-flag"></i> 180+ побед</span><span><i class="fas fa-map-marker-alt"></i> Великобритания</span></p>
+                <p class="team-page-desc">Легенда британского автоспорта. Возвращение к успеху.</p>
+                <div class="team-page-drivers">
+                    <h3><i class="fas fa-users"></i> Легендарные пилоты</h3>
+                    <div class="team-page-driver">
+                        <img src="senna.jpg" alt="Senna" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2255%22 height=%2255%22%3E%3Crect width=%2255%22 height=%2255%22 fill=%22%23333%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23fff%22 font-size=%2220%22%3E🏎️%3C/text%3E%3C/svg%3E'">
+                        <div class="driver-info">
+                            <h4><i class="fas fa-crown"></i> Айртон Сенна</h4>
+                            <p>3-кратный чемпион мира</p>
+                            <span class="driver-stats"><i class="fas fa-flag"></i> 41 победа • <i class="fas fa-flag-checkered"></i> 65 поул-позиций</span>
+                            <span class="driver-period"><i class="fas fa-map-marker-alt"></i> Бразилия 1988-1993</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-records">
+                    <h3><i class="fas fa-trophy"></i> Рекорды McLaren</h3>
+                    <ul class="records-list">
+                        <li><i class="fas fa-trophy"></i> <strong>8</strong> титулов чемпиона мира среди конструкторов</li>
+                        <li><i class="fas fa-crown"></i> <strong>12</strong> титулов чемпиона мира среди пилотов</li>
+                        <li><i class="fas fa-flag"></i> <strong>180+</strong> побед в Гран-при</li>
+                    </ul>
+                </div>
+                <div class="team-page-actions">
+                    <button class="btn-secondary" onclick="closeTeam('mclaren')"><i class="fas fa-arrow-left"></i> Все команды</button>
+                    <a href="#records" class="btn-link"><i class="fas fa-trophy"></i> Рекорды →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ASTON MARTIN -->
+<div class="team-page-overlay" id="team-aston-overlay"></div>
+<div class="team-page" id="team-aston">
+    <div class="team-page-inner">
+        <button class="back-btn" onclick="closeTeam('aston')"><i class="fas fa-arrow-left"></i> Назад</button>
+        <div class="team-page-content">
+            <div class="team-page-left">
+                <div class="car-container">
+                    <img src="aston.jpg" alt="Aston Martin" class="team-page-car" onerror="this.style.display='none'">
+                    <div class="car-glow" style="background: radial-gradient(circle, rgba(0,100,0,0.12), transparent 70%);"></div>
+                </div>
+            </div>
+            <div class="team-page-right">
+                <div class="team-page-badge" style="background: #006400;">Aston Martin</div>
+                <h1><i class="fas fa-leaf" style="color: #006400;"></i> Aston Martin</h1>
+                <p class="team-page-stats"><span><i class="fas fa-trophy"></i> 0 титулов</span><span><i class="fas fa-flag"></i> 0 побед</span><span><i class="fas fa-map-marker-alt"></i> Великобритания</span></p>
+                <p class="team-page-desc">Новая сила в Формуле 1. Амбициозный проект с богатой историей.</p>
+                <div class="team-page-drivers">
+                    <h3><i class="fas fa-users"></i> Легендарные пилоты</h3>
+                    <div class="team-page-driver">
+                        <img src="alonso.jpg" alt="Alonso" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2255%22 height=%2255%22%3E%3Crect width=%2255%22 height=%2255%22 fill=%22%23333%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23fff%22 font-size=%2220%22%3E🏎️%3C/text%3E%3C/svg%3E'">
+                        <div class="driver-info">
+                            <h4><i class="fas fa-crown"></i> Фернандо Алонсо</h4>
+                            <p>2-кратный чемпион мира</p>
+                            <span class="driver-stats"><i class="fas fa-flag"></i> 32 победы • <i class="fas fa-flag-checkered"></i> 22 поул-позиции</span>
+                            <span class="driver-period"><i class="fas fa-map-marker-alt"></i> Испания 2023-2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-records">
+                    <h3><i class="fas fa-trophy"></i> Рекорды Aston Martin</h3>
+                    <ul class="records-list">
+                        <li><i class="fas fa-trophy"></i> <strong>0</strong> титулов чемпиона мира (в процессе)</li>
+                        <li><i class="fas fa-medal"></i> <strong>3</strong> подиума в 2023 году</li>
+                        <li><i class="fas fa-flag-checkered"></i> <strong>1</strong> поул-позиция</li>
+                    </ul>
+                </div>
+                <div class="team-page-actions">
+                    <button class="btn-secondary" onclick="closeTeam('aston')"><i class="fas fa-arrow-left"></i> Все команды</button>
+                    <a href="#records" class="btn-link"><i class="fas fa-trophy"></i> Рекорды →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========================================================= -->
 <!-- РЕКОРДЫ -->
 <!-- ========================================================= -->
 <section class="records" id="records">
