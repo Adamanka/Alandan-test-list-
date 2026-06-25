@@ -13,7 +13,6 @@ function animateCounters() {
         if (!numberEl) return;
         var current = 0;
         var increment = Math.ceil(target / 60);
-        
         var timer = setInterval(function() {
             current += increment;
             if (current >= target) {
@@ -50,10 +49,8 @@ function openTeam(teamName) {
     document.querySelectorAll('.team-page-overlay').forEach(function(el) {
         el.classList.remove('active');
     });
-    
     var page = document.getElementById('team-' + teamName);
     var overlay = document.getElementById('team-' + teamName + '-overlay');
-    
     if (page) {
         page.classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -67,7 +64,6 @@ function openTeam(teamName) {
 function closeTeam(teamName) {
     var page = document.getElementById('team-' + teamName);
     var overlay = document.getElementById('team-' + teamName + '-overlay');
-    
     if (page) page.classList.remove('active');
     if (overlay) overlay.classList.remove('active');
     document.body.style.overflow = '';
@@ -125,7 +121,6 @@ document.querySelectorAll('a[href^="#"]').forEach(function(link) {
     link.addEventListener('click', function(e) {
         var targetId = this.getAttribute('href');
         if (targetId === '#') return;
-        
         var target = document.querySelector(targetId);
         if (target) {
             e.preventDefault();
@@ -136,7 +131,6 @@ document.querySelectorAll('a[href^="#"]').forEach(function(link) {
                 el.classList.remove('active');
             });
             document.body.style.overflow = '';
-            
             setTimeout(function() {
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 300);
@@ -147,7 +141,6 @@ document.querySelectorAll('a[href^="#"]').forEach(function(link) {
 function createParticles() {
     var container = document.getElementById('particles-container');
     if (!container) return;
-    
     for (var i = 0; i < 30; i++) {
         var particle = document.createElement('div');
         particle.className = 'particle';
@@ -169,7 +162,6 @@ if (container) {
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(renderer.domElement);
@@ -260,4 +252,4 @@ if (container) {
     });
 }
 
-console.log('🏎️ Formula 1 — Все функции работают!');
+console.log('🏎️ Formula 1 — Сайт готов!');
