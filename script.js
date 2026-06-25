@@ -1,6 +1,3 @@
-// =========================================================
-// AOS ИНИЦИАЛИЗАЦИЯ
-// =========================================================
 AOS.init({
     duration: 800,
     once: false,
@@ -9,9 +6,6 @@ AOS.init({
     easing: 'ease-out'
 });
 
-// =========================================================
-// АНИМИРОВАННЫЕ СЧЁТЧИКИ
-// =========================================================
 function animateCounters() {
     document.querySelectorAll('.hero-stat').forEach(function(stat) {
         var target = parseInt(stat.getAttribute('data-count'));
@@ -35,16 +29,10 @@ function animateCounters() {
     });
 }
 
-// =========================================================
-// ЗАПУСК СЧЁТЧИКОВ
-// =========================================================
 window.addEventListener('load', function() {
     setTimeout(animateCounters, 500);
 });
 
-// =========================================================
-// КЛИК ПО КОМАНДЕ
-// =========================================================
 document.addEventListener('click', function(e) {
     var wrapper = e.target.closest('.team-card-wrapper');
     if (wrapper) {
@@ -55,9 +43,6 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// =========================================================
-// ОТКРЫТИЕ СТРАНИЦЫ КОМАНДЫ
-// =========================================================
 function openTeam(teamName) {
     document.querySelectorAll('.team-page').forEach(function(el) {
         el.classList.remove('active');
@@ -79,9 +64,6 @@ function openTeam(teamName) {
     }
 }
 
-// =========================================================
-// ЗАКРЫТИЕ СТРАНИЦЫ КОМАНДЫ
-// =========================================================
 function closeTeam(teamName) {
     var page = document.getElementById('team-' + teamName);
     var overlay = document.getElementById('team-' + teamName + '-overlay');
@@ -91,9 +73,6 @@ function closeTeam(teamName) {
     document.body.style.overflow = '';
 }
 
-// =========================================================
-// ОТКРЫТИЕ МОДАЛЬНОГО ОКНА РЕКОРДА
-// =========================================================
 function openRecord(recordId) {
     var modal = document.getElementById(recordId + '-modal');
     if (modal) {
@@ -102,9 +81,6 @@ function openRecord(recordId) {
     }
 }
 
-// =========================================================
-// ЗАКРЫТИЕ МОДАЛЬНОГО ОКНА РЕКОРДА
-// =========================================================
 function closeRecord(recordId) {
     var modal = document.getElementById(recordId + '-modal');
     if (modal) {
@@ -113,9 +89,6 @@ function closeRecord(recordId) {
     }
 }
 
-// =========================================================
-// ЗАКРЫТИЕ ПО ESC
-// =========================================================
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         document.querySelectorAll('.record-modal.active').forEach(function(el) {
@@ -131,9 +104,6 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// =========================================================
-// МОБИЛЬНОЕ МЕНЮ
-// =========================================================
 var navToggle = document.getElementById('navToggle');
 var navMenu = document.getElementById('navMenu');
 
@@ -151,23 +121,10 @@ document.querySelectorAll('.nav-menu a').forEach(function(link) {
     });
 });
 
-// =========================================================
-// ПЛАВНЫЙ СКРОЛЛ
-// =========================================================
 document.querySelectorAll('a[href^="#"]').forEach(function(link) {
     link.addEventListener('click', function(e) {
         var targetId = this.getAttribute('href');
         if (targetId === '#') return;
-        
-        var parentPage = this.closest('.team-page');
-        if (parentPage) {
-            var target = parentPage.querySelector(targetId);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-            return;
-        }
         
         var target = document.querySelector(targetId);
         if (target) {
@@ -187,9 +144,6 @@ document.querySelectorAll('a[href^="#"]').forEach(function(link) {
     });
 });
 
-// =========================================================
-// ПАРЯЩИЕ ЧАСТИЦЫ
-// =========================================================
 function createParticles() {
     var container = document.getElementById('particles-container');
     if (!container) return;
@@ -209,9 +163,6 @@ function createParticles() {
 
 createParticles();
 
-// =========================================================
-// 3D ФОН
-// =========================================================
 var container = document.getElementById('three-canvas');
 
 if (container) {
@@ -310,4 +261,3 @@ if (container) {
 }
 
 console.log('🏎️ Formula 1 — Все функции работают!');
-console.log('🔥 Клик по командам и рекордам работает!');
