@@ -187,7 +187,7 @@ body {
 }
 
 /* ========================================================= */
-/* ЛОГОТИП F1 — ТОЛЬКО СПРАВА СВЕРХУ */
+/* ЛОГОТИП F1 — ТОЛЬКО СПРАВА СВЕРХУ (PNG БЕЗ ЗАДНИКА) */
 /* ========================================================= */
 
 .nav-logo {
@@ -200,8 +200,8 @@ body {
     width: 38px;
     height: 38px;
     object-fit: contain;
-    border-radius: 6px;
     transition: transform 0.3s ease;
+    background: transparent;
 }
 
 .nav-f1-logo:hover {
