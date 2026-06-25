@@ -1268,7 +1268,7 @@ footer {
     .btn-primary, .btn-outline { width: 100%; justify-content: center; }
 }
 /* ========================================================= */
-/* ЛОГОТИП F1 В ЦЕНТРЕ (ВМЕСТО ТЕКСТА) */
+/* ЛОГОТИП F1 В ЦЕНТРЕ */
 /* ========================================================= */
 
 .hero-logo-center {
@@ -1276,22 +1276,22 @@ footer {
 }
 
 .hero-f1-logo {
-    width: 160px;
+    width: 200px;
     height: auto;
     object-fit: contain;
     display: block;
     margin: 0 auto;
 }
 
-/* Адаптив для логотипа */
+/* Адаптив */
 @media (max-width: 768px) {
     .hero-f1-logo {
-        width: 120px;
+        width: 140px;
     }
 }
 
 @media (max-width: 480px) {
     .hero-f1-logo {
-        width: 90px;
+        width: 100px;
     }
 }
